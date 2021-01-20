@@ -8,10 +8,10 @@ Hier finden sich Guidelines zur Dokumentation im MS-Teams Wiki
 * Was wurde besprochen (siehe Tabelle)
 * Sonstige Anmerkungen
 
+
 |Titel|Beschreibung|Wer?|Wann?|
-|---|---|
-||||
-||||
+|---|---|---|---|
+|Guidelines erstellen|Für einheitliche Tests muss ein allgemeines Konzept erstellt werden|Max Mustermann|bis 24.04.2058|
 
 ## Wie dokumentiere ich richtig?
 Zur Dokumentation wird das Wiki (MS-Teams) genutzt. Generelle Informationen können an der geeigneten Stelle hinzugefügt werden. Dabei auf die Überschriften achten
