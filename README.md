@@ -5,8 +5,10 @@ Viel Spaß beim nachbauen wünscht Ihnen ihr Ocean Blue Hausautomation Team!
 ---
 
 ## Struktur
-Die einzelnen Module sind in der obigen Ordnerstruktur angelegt. Die empfohlene Reihenfolge bei der Bearbeitung der Tutorials ist:\
+Die einzelnen Module sind in der obigen Ordnerstruktur unter "Tutorials" angelegt. Die empfohlene Reihenfolge bei der Bearbeitung der Tutorials ist:\
 **Reihenfolge**
+
+Weitere Dokumente der Abschlussdokumentation finden sich im Ordner "Abschlussdokumentation". Idealer weise ist die Darstellung der **.md** Dateien über den Browser bzw. direkt in Github. Sie können aber auch in einem Textbearbeitungsprogramm wie "Editor", "Notepad++" oder "TextEdit" angesehen werden. Dabei ist die Formatierung jedoch nicht ideal, da Markup für die Ansicht im Browser ausgelegt ist.
 
 ## Code
 Um Ihnen die Arbeit zu erleichtern ist der benötigte Code in den jeweiligen Ordnern hinterlegt. Es kann sein, dass Änderungen am Code nötig sind. Diese Stellen sind für Sie durch die Tutorials anhand von Codeschnipseln erkenntlich. Zudem wird Ihnen immer erklärt was genau zu ändern ist.\
