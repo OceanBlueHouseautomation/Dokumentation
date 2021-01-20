@@ -18,3 +18,6 @@ Zur Dokumentation wird das Wiki (MS-Teams) genutzt. Generelle Informationen kön
 
 ## Wie Teste ich richtig?
 Unser Testkonzept ist im Wiki (MS-Teams) unter Testdokumente -> Testkonzept dokumentiert.
+
+## Wie schreibe ich das Tutorial?
+Hierzu den Styleguide beachten
