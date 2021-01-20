@@ -90,9 +90,9 @@ $ sudo nano /etc/motion/motion.conf
 ```
 Um nun den Netzwerkstream zu aktivieren muss in der config noch einiges umgeschrieben werden:
 
-* <daemon> off -> <daemon> on
-* <target_dir> /temp/motion -> <target_dir> /home/pi/cam
-* <stream_localhost> on-> <stream_localhost> off
+* daemon off -> daemon on
+* target_dir /temp/motion -> target_dir /home/pi/cam
+* stream_localhost on -> stream_localhost off
 
 
 Wenn dies nun alles erledigt ist, kann nun das Kameramodul genutzt werden. Motion bietet allerdings viele verschiedene Anpassungsmöglichkeiten, um das Modul an die Nutzung anzupassen.
