@@ -1,4 +1,4 @@
-Wie du dir die Basis für dein eigenes Smart-Home-System baust
+# Wie du dir die Basis für dein eigenes Smart-Home-System baust
 
 ## Einführung
 
