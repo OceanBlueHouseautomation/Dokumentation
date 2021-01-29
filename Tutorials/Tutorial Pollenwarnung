@@ -56,6 +56,18 @@ attr rgPollenvorhersage room Wetter-vorhersage
 attr rgPollenvorhersage valueIcon %VALUE
 attr rgPollenvorhersage valueStyle %VALUE
 ```
+### Schritt 4 - Integration in FTUI
+
+Eine Integration in FTUI könnte dann zum Beispiel so realisiert werden. Vielleicht etwas direkt für die Startseite?
+
+```html
+	<li data-row="3" data-col="5" data-sizex="1" data-sizey="2" class="left-align">                
+      <header>Pollenflug</header>
+			<div data-type="readingsgroup" data-device="rgPollenvorhersage"></div>
+			<div class="big" data-type="label">für PLZ </div><div data-type="label" data-device="doif_plz" data-get="P_PLZ"></div>
+	</li>
+```
+
 
 ## Abschluss
 Schon fertig?
