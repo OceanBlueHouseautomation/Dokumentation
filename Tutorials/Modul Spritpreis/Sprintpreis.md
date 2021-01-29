@@ -2,7 +2,7 @@
 
 ## Einführung
 
-In diesem Tutorial wirst du vier Tankstellen deiner Wahl in FHEM einbinden. Du kannst dir die Spritpreise in FTUI ansehen und auch nachträglich die überwachten Tankstellen ändern.
+In diesem Tutorial wirst du vier Tankstellen deiner Wahl in dein FHEM-System einbinden und die Spritpreise zum aktuellen Zeitpunkt sowie den letzten zeitlichen Verlauf überwachen. Du kannst dir die Spritpreise in der Oberfläche FTUI ansehen und auch nachträglich die überwachten Tankstellen ändern. Damit tankst du garantiert nicht mehr zu teuer.
 
 ## Voraussetzungen
 - Laufende FHEM-Installation (siehe Tutorial Hardware)
@@ -133,6 +133,9 @@ Schon fertig?
 Wir haben noch weitere Tutorials, um dir den Alltag zu erleichtern.
 Lerne hier, wie du immer über die Verkehrslage auf deinen Verkehrsrouten informiert bleibst:
 https://github.com/OceanBlueHouseautomation/Dokumentation/blob/main/Tutorials/Modul%20Verkehrsinfo/Verkehrinfo.md
+
+Du interessierst dich für weitere Umsetzungsideen von HTTPMOD? Dann schau dir doch mal an, wie du eine Sturmwarnung implementieren kannst, die dich bei Sturm direkt auf deinem iPhone warnt:
+https://github.com/OceanBlueHouseautomation/Dokumentation/blob/main/Tutorials/Modul%20Sturmwarnung/Sturmwarnung.md
 
 Viel Spaß!
 
