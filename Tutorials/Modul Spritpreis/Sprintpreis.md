@@ -13,7 +13,7 @@ In diesem Tutorial wirst du vier Tankstellen deiner Wahl in dein FHEM-System ein
 
 FHEM bringt ein Modul mit, welches Daten von Websiten auslesen kann. Dieses wird nicht nur hier, sondern zum Beispiel auch bei den Wettersensoren genutzt. Vielleicht ist dir die Vorgehensweise daher schon bekannt. Wir legen zum Test eine beliebige Tankstelle von clever-tanken.de an. In diesem Fall eine Tankstelle der Kette Shell aus Langen. Das wird später noch geändert, keine Sorge!
 
-Die folgende Datenstruktur sollte für nahezu alle Tankstellen standardmäßig funktionieren:
+Die folgende Datenstruktur sollte für nahezu alle Tankstellen standardmäßig funktionieren. Du beschreibst im Folgenden, wie die verschiedenen Treibstoffe auf der Clever-Tanken-Website hinterlegt sind, damit HTTPMOD diese automatisiert finden und auslesen kann:
 ```
 define tankstelle1 HTTPMOD http://www.clever-tanken.de/tankstelle_details/4871 600
 attr tankstelle1 enableControlSet 1
