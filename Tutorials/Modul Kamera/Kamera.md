@@ -1,8 +1,5 @@
 # Modul Kamera
 
-## Nütlicher Link
-[widget video.js](https://forum.fhem.de/index.php/topic,95374.0.html)
-
 ## Integration Überwachungskamera
 Dieses Tutorial beinhaltet ...
 
@@ -96,6 +93,16 @@ Um nun den Netzwerkstream zu aktivieren muss in der config noch einiges umgeschr
 
 
 Wenn dies nun alles erledigt ist, kann nun das Kameramodul genutzt werden. Motion bietet allerdings viele verschiedene Anpassungsmöglichkeiten, um das Modul an die Nutzung anzupassen.
+
+## Livestream in FTUI einbinden
+
+Um den Livestream nun in FTUI einzubinden, besteht die Möglichkeit der Nutzung von widget_video.js, einem inoffiziellen Erweiterungsmodul für die FTUI. Dieses kann im FHEM-Forum nach kostenloser Registrierung als Nutzer heruntergeladen werden:
+
+[widget video.js](https://forum.fhem.de/index.php/topic,95374.0.html)
+
+Die heruntergeladene Datei muss dabei einfach in /fhem/www/tablet/js kopiert werden. Anschließend kann eine Einbindung gemäß des FHEM-Wikis erfolgen, siehe [hier](https://wiki.fhem.de/wiki/FTUI_Widget_Video)
+
+Anmerkung: widget_video.js stellt bislang keine offizielle Erweiterung von FHEM dar. Die Nutzung erfolgt auf eigene Gefahr. Die Einbindung im Rahmen des Projekts erfolgte ohne Probleme.
 
 ## Weitere nützliche Funktionalitäten
 Die Kameramodule können vielseitig verwendet werden, deshalb sollen nun ein paar weitere sinnvolle Verwendungsmöglichkeiten genannt werden.
