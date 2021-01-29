@@ -3,7 +3,7 @@
 ## Integration Überwachungskamera
 Dieses Tutorial beinhaltet ...
 
-* ein Konzept für die Realisierung entwickeln
+* ein Konzept für die Realisierung
 * die Ausarbeitung weiterer nützlicher Funktionalitäten
 
 ## Realisierungskonzept Überwachungskamera
