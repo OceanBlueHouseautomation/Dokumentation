@@ -148,7 +148,10 @@ Als erstes aktivieren wir Telnet in FHEM - welches wir zur Übertragung der nun 
 ```
 define telnetPort telnet 7072 global
 ```
+Der Aufbau des Ultraschallsensors an den Raspberry Pi ist etwas komplexer, daher sei an dieser Stelle auf folgendes gelungene Tutorial verwiesen:
+https://www.einplatinencomputer.com/raspberry-pi-ultraschallsensor-hc-sr04-ansteuern-entfernung-messen/
 
+Tipp: Falls die benötigten Widerstände nicht vorhanden sind, kann alternativ auch mit mehrfachen gleichen Widerständen gearbeitet werden. Wir haben für unseren Aufbau beispielsweise mehrere gleiche Widerstände verwendet, und den GPIO-Pin des Pi zwischengeschaltet. Da wir von den 5 V Spannung nur ca. 3 V bis zum Pi bringen wollen, nehmen wir fünf 220 Ohm-Widerstände anstelle der 330 Ohm- und 470 Ohm Widerstände aus dem verlinkten Tutorial. Die Widerstände schalten wir in Reihe, wobei wir den Pi zwischen dem 3. und 4. Widerstand anbinden.
 
 ## Abschluss
 Schon fertig?
