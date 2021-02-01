@@ -39,11 +39,11 @@ set pushmsg message <message>
 ```
 unter Eingabe der gewünschten Nachricht als <message> beliebige Push-Benachrichtigungen zu versenden.
   
-### Schritt 4 - Integration eines Windsensors, z.B. von data199.com
+### Schritt 4 - Integration eines Windsensors, z.B. mobile-alerts.eu
 
-Der folgende Code integriert einen Windsensor von data199 in dein System:
+Der folgende Code integriert einen Windsensor von data199 in dein System. Im Attribut requestData musst du als deviceids und phoneid die Daten wählen, die dein gewünschter mobile-alerts.eu-Sensor besitzt. Du erhältst diese über den direkten Link auf mobile-alerts.eu hinter dem "?". Lasse die restlichen Einstellungen und Befehle jedoch unverändert: 
 ```
-defmod WindsensorAPI HTTPMOD https://www.data199.com/api/pv1/device/lastmeasurement 420
+define WindsensorAPI HTTPMOD https://www.data199.com/api/pv1/device/lastmeasurement 420
 attr WindsensorAPI userattr requestData
 attr WindsensorAPI enableCookies 1
 attr WindsensorAPI event-on-change-reading .*
@@ -52,6 +52,24 @@ attr WindsensorAPI requestData deviceids=0B1D2300E734&phoneid=285142992122
 attr WindsensorAPI stateFormat Geschwindigkeit: wind_speed km/h <br> Böe: wind_gust km/h <br> Richtung: wind_direction ° <br> Messung: timestamp
 attr WindsensorAPI timeout 410
 attr WindsensorAPI userReadings wind_direction:devices_01_measurement_wd.* { int(ReadingsVal("WindsensorAPI","devices_01_measurement_wd",0))/16*360 },  wind_speed:devices_01_measurement_ws.* { ReadingsVal("WindsensorAPI","devices_01_measurement_ws",0)/1000*3600 },  wind_gust:devices_01_measurement_wg.* { ReadingsVal("WindsensorAPI","devices_01_measurement_wg",0)/1000*3600 },  timestamp:devices_01_measurement_ts.* { POSIX::strftime("%F %T", localtime(ReadingsVal("WindsensorAPI","devices_01_measurement_ts",0))) },
+```
+Das Gerät wird nun alle 420 Sekunden die aktuellen Winddaten abfragen. Warum nur alle 420 Sekunden? Da der Windsensor ohnehin nicht häufiger Daten aufliefert, wäre ein niedrigeres Prüfintervall nicht sinnvoll bzw. würde nur unnötige Abfragen generieren.
+
+Alternativ stellen wir dir mit demselben MODUL die passende Lösung für mobile-alerts.eu direkt vor. Hierüber erhältst du allerdings weniger Daten, insb. beispielsweise die Windrichtung lässt sich so nicht anzeigen. Daher bevorzugen wir die obere Lösung, auch wenn diese syntaktisch vermutlich schwieriger umzusetzen ist, da du im nun folgenden
+Beispiel nur den Link ändern musst:
+```
+define Windsensor HTTPMOD https://measurements.mobile-alerts.eu/Home/MeasurementDetails?deviceid=0B1D2300E734&vendorid=244DD836-16DE-465E-B265-B3F1596A26D4&appbundle=de.synertronixx.remotemonitor 420
+attr Windsensor userattr reading01Name reading01OExpr reading01Regex reading02Name reading02Regex
+attr Windsensor enableCookies 1
+attr Windsensor event-on-change-reading .*
+attr Windsensor icon weather_wind_speed
+attr Windsensor reading01Name windspeed
+attr Windsensor reading01OExpr join ".", (split /,/, $val)
+attr Windsensor reading01Regex ([^>]\d*[,]\d)
+attr Windsensor reading02Name timestamp
+attr Windsensor reading02Regex ([^>]\d+[.]\d+[.]\d+\s\d+[:]\d+[:]\d+)
+attr Windsensor stateFormat Windgeschwindigkeit:  windspeed km/h <br> Messung: timestamp
+attr Windsensor timeout 410
 ```
   
 ### Schritt 5 - Integration des Pushnachrichten-Dienstes in konrekte Anwendungszwecke (in eine Sturmwarnung)
