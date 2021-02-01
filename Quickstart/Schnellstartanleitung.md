@@ -13,7 +13,7 @@ So erhältst du unsere Abschlusslösung, ohne die Gefahr, dass in einzelnen Tuto
 
 Du hast von uns ein Image-File erhalten, welches bereits die komplette Konfiguration des Raspberry Pis inklusive FHEM-Installation und aller gelieferten Module enthält.
 Dieses kannst du einfach mit BalenaEtcher oder einer vergleichbaren Software auf die Karte schreiben.
-Das Image findest du hier: LINK FOLGT
+Das Image findest du hier: https://1drv.ms/u/s!AgnLQTrcdpQIgqsAM64PKjwyvJlgcQ?e=f2W5kb (Der Download ist  nur bis Mai 2021 möglich!)
 BalenaEtcher findest du hier: https://www.balena.io/etcher/
 
 
@@ -33,7 +33,7 @@ alle relevanten Daten wie zum Beispiel deine Postleitzahl hinterlegen.
 ### Schritt 4 - "Feintuning"
 
 Manche Module benötigen nun noch etwas Feintuning von dir: Z.B. musst du bei der Verkehrsroutenüberwachung und beim Dienst PushNotifier einen eigenen API-Key hinterlegen. Wie du diese generierst und richtig integrierst, lernst du in den detaillierten Tutorials.
-Außerdem solltest du über FTUI deine Einstellungen anpassen. So kommst du mit unserem Grundgerüst Schritt für Schritt zu deinem eigenen FHEM-System!
+Außerdem solltest du über FTUI deine Einstellungen anpassen. So kommst du mit unserem Grundgerüst Schritt für Schritt zu deinem eigenen FHEM-System! Wenn einzelne Module zu Fehlern führen, ist immer noch eine Kleinigkeit anzupassen. Komm bei Fragen hierzu natürlich auch gerne auf uns zu!
 
 
 ## Abschluss
