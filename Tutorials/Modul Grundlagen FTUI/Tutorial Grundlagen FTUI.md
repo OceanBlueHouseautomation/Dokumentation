@@ -6,7 +6,7 @@ In diesem Tutorial lernst du die Grundlagen zur Gestaltung deiner FTUI. Außerde
 
 ## Voraussetzungen 
 
-Funktionierende FHEM-Installation 
+* Funktionierende FHEM-Installation 
 
 ### Schritt 1 – Tablet UI installieren 
 Zuerst Beginn musst du alle Dateien von FHEM Tablet UI in das FHEM Verzeichnis **/opt/fhem/www kopiert werden**. Das geht mit folgendem update-Befehl über die Kommandozeile in Fhem: 
