@@ -37,6 +37,7 @@ Der Selbstbau-CUL ist ein Stück Hardware, welches du benötigst um ein 433 MHz-
 - CC1101 Funkmodul mit 868 MHz oder 433 MHz (von uns verwendet) inkl. Antenne
 - Jumper Kabel weiblich-weiblich
 Der Zusammenbau des CUL ist relativ einfach:
+
 |Arduino Nano|Funkmodul                  |
 |---                |---                 |
 |Pin 17 - VCC 3,3V  |PIN 1 - VDD         |
