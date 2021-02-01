@@ -8,7 +8,9 @@ In diesem Tutorial wirst du FHEM auf einem Raspberry Pi aufsetzen. Du wirst auß
 Keine vorangehenden Schritte. Folgende Hardware musst du bereithalten:
 - Raspberry Pi (Version beliebig, wir empfehlen die Variante 3B+)
 - Micro-SD-Karte (min. 16 GB!)
-- 
+- TECKIN SP22 WLAN Steckdose
+- Beliebige Funk-Steckdose
+
 
 ### Schritt 1 - Raspberry Pi OS auf deinem Pi
 
@@ -30,7 +32,45 @@ Anschließend solltest du den Raspberry mit dem Kommando "reboot" (wieder über 
 
 ### Schritt 3 - Baue und verbinde einen sogenannten Selbstbau-CUL
 
-Der Selbstbau-CUL ist ein Stück Hardware, welches du benötigst um ein 433 MHz-Signal mit deiner Smarthome-Installation zu verschicken. Du benötigst dies, um mit deiner Funksteckdose zu kommunizieren.
+Der Selbstbau-CUL ist ein Stück Hardware, welches du benötigst um ein 433 MHz-Signal mit deiner Smarthome-Installation zu verschicken. Du benötigst diesen, um mit deiner Funksteckdose zu kommunizieren. Das Praktische am sogenannten CUL ist, dass du diesen auch ganz einfach selbst bauen kannst. Hierfür brauchst du:
+- Arduino Nano (oder Clon)
+- CC1101 Funkmodul mit 868 MHz oder 433 MHz (von uns verwendet) inkl. Antenne
+- Jumper Kabel weiblich-weiblich
+Der Zusammenbau des CUL ist relativ einfach:
+| Arduino Nano        | Funkmodul           |
+| ------------- |:-------------:|
+| Pin 17 - VCC 3,3V      | PIN 1 - VDD |
+| Pin 14 - D11      | PIN 3 - SI (MOSI)      |
+| Pin 16 - D13 | PIN 4 - SCK      |
+| Pin 15 - D12 | PIN 5 - SO (MISO)      |
+| PIN 5 - D02 | PIN 6 - GDO2      |
+| Pin 13 - D10 | PIN 7 - CSn (SS)      |
+| Pin 6 - D03 | PIN 8 - GDO0      |
+| PIN 4 - GND | PIN 9 GND      |
+| nicht belegt | PIN 2 & 10      |
+
+Als nächstes musst Du eine Firmware, also einen Treiber/ein Mini-Betriebssystem für den CUL aufspielen. 
+Hierzu meldest du dich über das Programm PuTTy per SSH auf deinem Rapsberry Pi an und führst nacheinander die folgenden Befehle aus:
+
+```
+sudo apt-get install make gcc-avr avrdude avr-libc subversion
+svn checkout http://svn.code.sf.net/p/culfw/code/trunk culfw-code
+cd culfw-code/culfw/Devices/nanoCUL
+nano board.h
+```
+Je nach dem, ob du einen 868 MHz oder einen 433 MHz-Chip besitzt, musst du eine Zeile im sich geöffneten Editor ausklammern. Die entsprechende Zeile ist dir im Editor-Code markiert. (If yo are using a ... module for XXX MHz). Lösche die jeweils nicht zu deinem Chip passende Zeile.
+
+Speichere die Änderungen anschließend mit Strg + X, Y und Enter.
+Anschließend kompilierst du die Firmware durch:
+```
+make -j 4
+```
+
+sowie anschließendem 
+```
+make program
+```
+Der Pi sollte nun erfolgreichen Abschluss melden: "avrdude done. Thank you."
 
 ### Schritt 4 - Binde eine Funksteckdose an FHEM an
 
@@ -92,7 +132,7 @@ Viel Spaß!
 Du möchtest erfahren, auf welcher Basis dieser Teil deines Blue Ocean Hausautomationssystems erstellt wurde? Dann schau doch mal hier für weitere und ausführliche Hintergrundinformationen:
 https://wiki.fhem.de/wiki/Raspberry_Pi (Letzter Zugriff: 28.01.21)
 https://www.reichelt.de/magazin/how-to/hausautomation-mit-fhem-der-raspberry-als-starke-smart-home-zentrale/ (Letzer Zugriff: 28.01.21)
-https://raspberry.tips/raspberrypi-tutorials/hausautomatisierung-mit-fhem-teil-1-cul-stick-selbstbau-868mhz-cul-am-raspberry-pi (Letzter Zugriff: 28.01.21)
+https://raspberry.tips/raspberrypi-tutorials/hausautomatisierung-mit-fhem-teil-1-cul-stick-selbstbau-868mhz-cul-am-raspberry-pi (Letzter Zugriff: 01.02.21)
 https://gettoweb.de/haus/tasmota-device-in-fhem-einbinden/ (Letzter Zugriff: 28.01.21)
 https://www.einplatinencomputer.com/raspberry-pi-ultraschallsensor-hc-sr04-ansteuern-entfernung-messen/ (Letzter Zugriff: 28.01.21)
 https://forum.fhem.de/index.php?topic=19812.0 (Letzter Zugriff: 28.01.21)
