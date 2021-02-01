@@ -49,6 +49,7 @@ Der Zusammenbau des CUL ist relativ einfach:
 |PIN 4 - GND        |PIN 9 GND           |
 |nicht belegt       |PIN 2 & 10          |
 
+
 Schließe den Arduino Nano mit angeschlossener Antenne nun via mitgeliefertem USB-Kabel an deinen Pi an.
 
 Als nächstes musst Du eine Firmware, also einen Treiber/ein Mini-Betriebssystem für den CUL aufspielen. 
