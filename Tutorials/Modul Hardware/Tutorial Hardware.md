@@ -29,6 +29,11 @@ apt-get update
 apt-get install fhem
 ```
 Anschließend solltest du den Raspberry mit dem Kommando "reboot" (wieder über das Putty-Fenster durchgeführt) einmalig neustarten.
+Nun läuft FHEM auf dem Port 1883, d.h. du kannst über die IP-Adresse des PIs:1883 darauf zugreifen.
+
+An dieser Stelle bietet es sich an, einmal die Einsteigerdokumente für FHEM zu lesen:
+https://wiki.fhem.de/wiki/Erste_Schritte_in_FHEM
+Google doch mal, was mit FHEM alles möglich ist, bevor du dich an den Anschluss der Hardware machst. Du kannst z.B. bei Bedarf deine Installation via DynDNS auch über das Internet erreichbar machen (Alternative: VPN). Du kannst sie mit Nutzername und Passwort versehen (was wir bei unserer Version bspw. getan haben), du kannst die Verbindung auf HTTPS-only setzen und dir ein eigenes SSL-Zertifikat erstellen uvm. An dieser Stelle erfolgt von uns keine Schritt für Schritt-Anleitung, da wir keine generelle Empfehlung für die Grundkonfiguration von FHEM geben können und wollen - dies ist stark von deinem persönlichen Einsatzzweck und Schutzbedürfnis abhängig.
 
 ### Schritt 3 - Baue und verbinde einen sogenannten Selbstbau-CUL
 
