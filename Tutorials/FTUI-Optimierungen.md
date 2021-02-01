@@ -1,4 +1,4 @@
-# Wie bei Fhem das Auge mit isst 
+# Wie bei FHEM das Auge mit isst 
 
 ## Einführung 
 
