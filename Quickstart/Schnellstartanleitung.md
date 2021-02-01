@@ -16,7 +16,7 @@ Dieses kannst du einfach mit BalenaEtcher oder einer vergleichbaren Software auf
 ### Schritt 2 - Anschließen der Hardware
 
 Zum Anschließen der Hardware empfehlen wir dir die Lektüre des folgenden Tutorials:
-https://github.com/OceanBlueHouseautomation/Dokumentation/blob/main/Tutorials/Modul%20Hardware/Hardware.md
+https://github.com/OceanBlueHouseautomation/Dokumentation/blob/main/Tutorials/Modul%20Hardware/Tutorial%20Hardware.md
 
 ### Schritt 3 - Starten deiner Installation
 
