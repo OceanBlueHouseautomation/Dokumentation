@@ -125,7 +125,7 @@ Lerne hier, wie du smarte Steckdosen einbindest, am Beispiel einer coolen Weihna
 https://github.com/OceanBlueHouseautomation/Dokumentation/blob/main/Tutorials/Modul%20Weihnachtsbeleuchtung/Tutorial.md
 
 Vielleicht hast du dir aber auch eine Rollladensteuerung auf Basis eines Shelly 2.5 gekauft? So bindest du diese ein:
-https://github.com/OceanBlueHouseautomation/Dokumentation/blob/main/Tutorials/Modul%20Weihnachtsbeleuchtung/Tutorial.md
+https://github.com/OceanBlueHouseautomation/Dokumentation/blob/main/Tutorials/Modul%20Rolladensteuerung/Rolladensteuerung.md
 
 Viel Spaß!
 
