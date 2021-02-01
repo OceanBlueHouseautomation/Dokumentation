@@ -54,9 +54,9 @@ Für die Abgabe haben wir uns entschlossen, die wichtigsten Informationen, also 
 <li data-row="2" data-col="3" data-sizex="1" data-sizey="2" class="left-align"><header>Verkehrsroutenüberwachung</header>
     <div class="sheet">
 		<div class="inline big cell" data-type="label">Fahrt von</div>
-        <div class="cell" data-type="input" data-device="TRAFFIC1" data-get="start_address" data-set="start_address" data-cmd="setreading" class="w1x"></div>
+        <div class="cell" data-type="input" data-device="doif_traffic1_start" data-get="start_address" data-set="start_address" data-cmd="setreading" class="w1x"></div>
 		<div class="inline big cell" data-type="label">nach</div>
-        <div class="cell" data-type="input" data-device="TRAFFIC1" data-get="end_address" data-set="end_address" data-cmd="setreading" class="w1x"></div><hr>
+        <div class="cell" data-type="input" data-device="doif_traffic1_end" data-get="end_address" data-set="end_address" data-cmd="setreading" class="w1x"></div><hr>
 		<div class="inline big cell" data-type="label">Dauer bis zum Ziel</div>
 		<div data-type="label" data-device="TRAFFIC1" data-get="duration"></div>
 		<div class="inline big cell" data-type="label">Verzögerung</div>
@@ -65,6 +65,21 @@ Für die Abgabe haben wir uns entschlossen, die wichtigsten Informationen, also 
 		<div data-type="label" data-device="TRAFFIC1" data-get="summary"></div>
     </div> 
 </li>
+```
+
+Folgendes DOIF-Paar dient dabei als Schnittstelle und garantiert eine korrekte Verarbeitung inklusive verzögerungsfreier Berechnung der Verkehrsdaten:
+```
+define doif_traffic1_start DOIF ([$SELF:start_address])(attr TRAFFIC1 start_address [$SELF:start_address];;set TRAFFIC1 update)
+attr doif_traffic1_start do always
+attr doif_traffic1_start selftrigger all
+attr doif_traffic1_start setList start_address
+attr doif_traffic1_start readingList start_address
+
+define doif_traffic1_end DOIF ([$SELF:end_address])(attr TRAFFIC1 end_address [$SELF:end_address];;set TRAFFIC1 update)
+attr doif_traffic1_end do always
+attr doif_traffic1_end selftrigger all
+attr doif_traffic1_end setList end_address
+attr doif_traffic1_end readingList end_address
 ```
 
 ### Schritt 5 - Fein-Tuning
