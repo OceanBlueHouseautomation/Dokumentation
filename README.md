@@ -5,9 +5,21 @@ Viel Spaß beim nachbauen wünscht dir das Ocean Blue Hausautomation Team!
 
 ## Struktur
 Die einzelnen Module sind in der obigen Ordnerstruktur unter "Tutorials" angelegt. Die empfohlene Reihenfolge bei der Bearbeitung der Tutorials ist:\
-**Reihenfolge**
 
-Der Quickguide ist unter "Quickguide" zu finden.
+1. Modul Hardware
+2. Modul Grundlagen FTUI
+3. Modul Sturmwarnung
+4. Modul Wetter
+5. Modul Pollenwarnung
+6. Modul RSS-Feed (Nachrichten)
+7. Modul Spritpreis
+8. Modul Verkehrsinfo
+9. Modul Weihnachtsbeleuchtung
+10. Modul Gartenbewässerung
+11. Modul Rolladensteuerung
+12. Modul Kamera
+
+Die Schnellstartanleitung ist unter "Quickguide" zu finden.
 
 Weitere Dokumente der Abschlussdokumentation finden sich im Ordner "Abschlussdokumentation". Idealer weise ist die Darstellung der **.md** Dateien über den Browser bzw. direkt in Github. Sie können aber auch in einem Textbearbeitungsprogramm wie "Editor", "Notepad++" oder "TextEdit" angesehen werden. Dabei ist die Formatierung jedoch nicht ideal, da Markup für die Ansicht im Browser ausgelegt ist.
 

@@ -1,0 +1,2 @@
+# Abschlussdokumentation
+In diesem Ordner befindet sich unsere Abschlussdokumentation. Dabei wurden die Dokumentationen aus dem Teamwiki in MS-Teams entnommen und wichtige Dokumente angehängt. Um es übersichtlicher zu machen haben wir keine Test- oder Meeting-Protokolle angefügt. Dazu haben wir ledeglich unser Vorgehen dokumentiert.
