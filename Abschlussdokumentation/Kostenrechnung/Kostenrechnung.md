@@ -8,7 +8,8 @@ Stunden gesamt:
 65h * 9 = 585h
  
 Aufwand Team:
-9 * 7.475€ = 67.275€ -> ca. 65.000€
-brutto: 77.350€
+9 * 7.475€ = 67.275€ -> ca. **65.000€**
+
+Die 65.000€ sind Nettopreise. Mit einer Umsatzsteuer von 19% ergibt sich damit ein Brottopreis von **77.350€**.
 
 Die genaue Auflistung in Tabellenform mit Zuordnung zu den einzelnen Modulen findet sich in der Abschlusspräsentation.

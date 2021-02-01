@@ -1,4 +1,4 @@
-# Wie du mithilfe von FHEM nie wieder niesen musst
+# Wie du mit Hilfe von FHEM nie wieder niesen musst
 
 ## Einführung
 

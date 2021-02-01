@@ -1,4 +1,4 @@
-# Wie du mithilfe von FHEM immer weißt, was auf der Welt los ist
+# Wie du mit Hilfe von FHEM immer weißt, was auf der Welt los ist
 
 ## Einführung
 

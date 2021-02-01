@@ -1,4 +1,4 @@
-# Wie du mithilfe von FHEM nie wieder zu viel für Benzin ausgibst
+# Wie du mit Hilfe von FHEM nie wieder zu viel für Benzin ausgibst
 
 ## Einführung
 

@@ -1,7 +1,6 @@
-# Wie dir mithilfe von FHEM ein Licht aufgeht (und zwar dann, wenn du willst) 
+# Wie dir mit Hilfe von FHEM ein Licht aufgeht (und zwar dann, wenn du willst) 
 
  
-
 ## Einführung 
 
  

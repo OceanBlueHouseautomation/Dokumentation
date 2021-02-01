@@ -1,4 +1,4 @@
-# Wie FHEM dir Warnungen und Statusupdates direkt an Dein Handy schickt!
+# Wie du mit Hilfe von FHEM nie wieder von einem Sturm überrascht wirst
 
 ## Einführung
 

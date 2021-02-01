@@ -1,4 +1,4 @@
-# Wie du mithilfe von FHEM nie wieder zu spät kommst
+# Wie du mit Hilfe von FHEM nie wieder zu spät kommst
 
 ## Einführung
 

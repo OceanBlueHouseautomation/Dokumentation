@@ -1,6 +1,6 @@
 # Raspberry Pi
 
-## Verbindung mit dem Raspberry Pi (Ansprechpartner: Florian Q.)
+## Verbindung mit dem Raspberry Pi
 ### Per SSH:
 Empfohlen wird die Nutzung von PuTTY, Öffnen einer SSH-Session mit folgenden Daten:
 Host Name (or IP address)	Port
