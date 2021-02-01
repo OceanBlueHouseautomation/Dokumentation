@@ -55,7 +55,10 @@ attr rgPollenvorhersage mapping %READING
 attr rgPollenvorhersage room Wetter-vorhersage
 attr rgPollenvorhersage valueIcon %VALUE
 attr rgPollenvorhersage valueStyle %VALUE
+attr rgPollenvorhersage alias Pollenflug der nächsten 7 Tage
 ```
+Mit dem Attribut alias versorgen wir die ReadingsGroup dabei gleichzeitig mit einem treffenden Namen, der in FTUI später als Überschrift angezeigt wird.
+
 ### Schritt 4 - Integration in FTUI
 
 Eine Integration in FTUI könnte dann zum Beispiel so realisiert werden. Vielleicht etwas direkt für die Startseite?
