@@ -22,6 +22,7 @@ BalenaEtcher findest du hier: https://www.balena.io/etcher/
 Zum Anschließen der Hardware empfehlen wir dir die Lektüre des folgenden Tutorials:
 https://github.com/OceanBlueHouseautomation/Dokumentation/blob/main/Tutorials/Modul%20Hardware/Tutorial%20Hardware.md
 
+Tipp: Bei der Einrichtung des Shellys solltest du diesen direkt mit der IP-Adresse 192.168.178.99 anbinden - dann findet unsser Basis-Image diesen direkt und du sparst noch mehr Zeit bei der Einrichtung!
 
 ### Schritt 3 - Starten deiner Installation
 
