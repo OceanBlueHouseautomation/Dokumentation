@@ -148,10 +148,98 @@ Als erstes aktivieren wir Telnet in FHEM - welches wir zur Übertragung der nun 
 ```
 define telnetPort telnet 7072 global
 ```
-Der Aufbau des Ultraschallsensors an den Raspberry Pi ist etwas komplexer, daher sei an dieser Stelle auf folgendes gelungene Tutorial verwiesen:
+Der Aufbau des Ultraschallsensors an den Raspberry Pi ist etwas komplexer, daher sei an dieser Stelle auf folgendes gelungene Tutorial verwiesen. Achtung: Beachte nur den Aufbau, nicht das ebenfalls beschriebene Skript:
 https://www.einplatinencomputer.com/raspberry-pi-ultraschallsensor-hc-sr04-ansteuern-entfernung-messen/
 
 Tipp: Falls die benötigten Widerstände nicht vorhanden sind, kann alternativ auch mit mehrfachen gleichen Widerständen gearbeitet werden. Wir haben für unseren Aufbau beispielsweise mehrere gleiche Widerstände verwendet, und den GPIO-Pin des Pi zwischengeschaltet. Da wir von den 5 V Spannung nur ca. 3 V bis zum Pi bringen wollen, nehmen wir fünf 220 Ohm-Widerstände anstelle der 330 Ohm- und 470 Ohm Widerstände aus dem verlinkten Tutorial. Die Widerstände schalten wir in Reihe, wobei wir den Pi zwischen dem 3. und 4. Widerstand anbinden.
+
+Wenn du den Ultraschallsensor angeschlossen hast, musst du diesen noch in FHEM integrieren. Hierzu behelfen wir uns ausnahmsweise einem Skript, welches wir manuell im Raspberry Pi erstellen und automatisiert ausführen.
+
+Zunächst aber zu den Schritten in FHEM:
+```
+define UC1 dummy
+attr UC1 stateFormat Abstand
+attr UC1 userReadings Abstand
+define at_UC1 at +*00:00:03 {system 'sudo /usr/bin/python /opt/fhem/FHEM/UC1.sh &'}
+attr at_UC1 verbose 0 
+```
+
+Anschließend erstellst du ein Skript, welches du in /opt/fhem/FHEM als UC1.sh ablegst.
+```
+#!/usr/bin/python
+#+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+#|R|a|s|p|b|e|r|r|y|P|i|-|S|p|y|.|c|o|.|u|k|
+#+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+#
+# Orginal-Script von Author : Matt Hawkins ultrasonic_2.py
+# Measure distance using an ultrasonic module
+#
+# --------------------------------------------------------
+#           Import required Python libraries
+# --------------------------------------------------------
+#
+# Veraendert von Ollir (FHEM-Forum) fuer die Rueckgabe an
+# FHEM per Telnet: Port 7072
+#
+
+import time
+import RPi.GPIO as GPIO
+import os
+
+# --------------------------------------------------------
+#                  Define some functions
+# --------------------------------------------------------
+
+def measure():
+  time.sleep(0.2)
+  GPIO.output(GPIO_TRIGGER, True)
+  time.sleep(0.0001)
+  GPIO.output(GPIO_TRIGGER, False)
+  while GPIO.input(GPIO_ECHO)==0:
+    start = time.time()
+  while GPIO.input(GPIO_ECHO)==1:
+    stop = time.time()
+  elapsed = stop - start
+  distance = elapsed * 17150
+  if float(distance) >= 400:
+    distance = measure()
+  return distance
+
+def measure_average():
+  # This function takes 3 measurements and
+  # returns the average.
+  distance1 = measure()
+  distance2 = measure()
+  distance3 = measure()
+  distance_sum = distance1 + distance2 + distance3
+  distance = distance_sum / 3
+  return distance
+
+# --------------------------------------------------------
+#                        Main Script
+# --------------------------------------------------------
+# Use BCM GPIO references
+# instead of physical pin numbers
+
+GPIO.setmode(GPIO.BCM)
+GPIO_TRIGGER = 22   ####  evtl. GPIO anpassen
+GPIO_ECHO    = 23   ####  evtl. GPIO anpassen
+GPIO.setup(GPIO_TRIGGER,GPIO.OUT)  # Trigger
+GPIO.setup(GPIO_ECHO,GPIO.IN)      # Echo
+GPIO.output(GPIO_TRIGGER, False)
+
+# --------------------------------------------------------
+#                Rueckgabe an FHEM
+# --------------------------------------------------------
+
+distanceRet = "%.1f" % measure_average() # fuer Mittelwert Messung
+#distanceRet = "%.1f" % measure()        # fuer einmalige Messung
+if float(distanceRet) <= 400:
+  os.system('perl /opt/fhem/fhem.pl 7072 "setreading UC1 Abstand '+str(distanceRet)+'"')
+GPIO.cleanup()
+```
+
+Achte beim Skript darauf, unten im Bereich "Main Script" die GPIO-Ports an deine tatsächlich verbundenen Ports anzupassen. Wenn du Zweifel hast, schau nochmal ins oben verlinkte Tutorial!
 
 ## Abschluss
 Schon fertig?
@@ -173,3 +261,5 @@ https://gettoweb.de/haus/tasmota-device-in-fhem-einbinden/ (Letzter Zugriff: 28.
 https://www.einplatinencomputer.com/raspberry-pi-ultraschallsensor-hc-sr04-ansteuern-entfernung-messen/ (Letzter Zugriff: 28.01.21)
 https://forum.fhem.de/index.php?topic=19812.0 (Letzter Zugriff: 28.01.21)
 https://wiki.fhem.de/wiki/Telnet (Letzter Zugriff: 01.02.21)
+https://forum.fhem.de/index.php?topic=19812.0 (Letzter Zugriff: 02.02.21)
+https://www.einplatinencomputer.com/raspberry-pi-ultraschallsensor-hc-sr04-ansteuern-entfernung-messen/ (Letzter Zugriff: 02.02.21)
