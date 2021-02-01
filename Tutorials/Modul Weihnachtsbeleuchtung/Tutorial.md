@@ -49,7 +49,7 @@ Damit du **SUNIRSE_EL** nutzen kannst, muss in der Konfiguration (fhem.cfg) der 
 Dazu benötigen du folgende Definitionen: 
 
  
-```html
+```
 <attr global latitude 52.51626> 
 
 <attr global longitude 13.37778> 
@@ -190,7 +190,7 @@ Aktiviere jetzt auf deinem Iphone die Funktion **„über WLAN synchronisieren�
 Gebe in der Kommandozeile folgende Befehle ein:   
 
  
-```html
+```
 <setcap cap_net_raw+ep /bin/ping> 
 ```
  
@@ -198,7 +198,7 @@ Gebe in der Kommandozeile folgende Befehle ein:  
 Damit umgehst du mögliche Berechtigungsprobleme und der Ping sollte durch FHEM durchführbar sein. 
 
  
-```html
+```
 <define iphones_gesamt structure iphones_structure <iphone>> 
 ```
  
