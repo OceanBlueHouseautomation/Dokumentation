@@ -6,9 +6,9 @@ In diesem Tutorial wirst du die Bewässerung deines Gartens manuell, teilautomat
 
 ## Voraussetzungen 
 
-Bestehende FTUI 
+* Bestehende FTUI 
 
-Temperatursensor, Windsensor & Regensensor 
+## Temperatursensor, Windsensor & Regensensor 
 
 Die Bewässerung besteht aus zwei verschiedenen Pumpen: Der Pumpe im Hausgarten, im Folgenden als „Hausgartenpumpe“ bezeichnet, und der Pumpe im Schrebergarten, im Folgenden als „Schrebergartenpumpe“ bezeichnet. 
 
