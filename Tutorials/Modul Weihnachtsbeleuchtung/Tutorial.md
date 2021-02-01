@@ -484,7 +484,7 @@ Damit habst du die Beleuchtungssteuerung erfolgreich erstellt und eingerichtet.
 
 ### Schritt 8 
 
-Erklärung: VerbinSieng zur Bedienoberfläche  
+Erklärung: Verbindung zur Bedienoberfläche  
 
  
 
