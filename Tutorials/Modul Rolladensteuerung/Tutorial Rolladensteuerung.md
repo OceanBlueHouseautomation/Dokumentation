@@ -6,11 +6,9 @@ In diesem Tutorial wird ein Rollladen, welcher über den Shelly 2.5 gesteuert wi
 
 ## Voraussetzungen 
 
-Funktionierende FHEM-Installation 
-
-Angeschlossener Shelly 
-
-FTUI-Grundlagen 
+* Funktionierende FHEM-Installation 
+* Angeschlossener Shelly 
+* FTUI-Grundlagen 
 
 ### Schritt 1 – Modus des Shellys ändern 
 
