@@ -344,7 +344,7 @@ Die DOIF RollladenZeitsteuerung enthält die Readings „WochentagsHOCH Wochenta
 Damit die Uhrzeiten über die FTUI gesetzt werden können, kannst du unser Code Beispiel und das Kommentar <!--  Wochentags- und Wochenendbetrieb --> in die rollladen.html kopieren:  
 
   
-`````html
+````html
 <li data-row="1" data-col="3" data-sizex="2" data-sizey="2" class="left-align"> 
 
 <header>Wochentagssteuerung</header> 
