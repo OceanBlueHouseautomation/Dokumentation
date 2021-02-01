@@ -17,9 +17,9 @@ Da der Aufbau der Pumpen identisch ist, wird im folgenden Verlauf der Dokumentat
 Damit du deine Bewässeung über den Shelly 2.5 steuern kannst, musst du zunächst den Modus über das Attribut „mode“ auf den Wert „relay“ ändern. Dies kannst du über fhem mit Folgendem Kommando in der Kommandozeile tun: 
 
   
-``
+````
 <attr myShelly mode relay> 
-``
+````
   
 
 Alternativ dazu kannst du auch das über die FTUI bedienbare Widget-Switch benutzen, welches im Kapitel FTUI-Grundlagen von uns als Beispiel auf der Startseite implementiert wurde. Hier kannst du den mode des Shelly zwischen roller und relay (dieser wird für die Bewässerung benötigt) wechseln. 
