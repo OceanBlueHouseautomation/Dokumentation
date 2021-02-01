@@ -205,10 +205,8 @@ Damit umgehst du mögliche Berechtigungsprobleme und der Ping sollte durch FHEM 
 
 Ersetze bei diesem Befehl iphone durch den Namen des Iphones welchen du zuvor vergeben hast. Du kannst auch mehrere Iphones einbindem, indem du die weiteren Namen folgendermaßen annhängst: 
 
-```html
+```
 <iphone><iphone2><iphone3> usw. 
-
- 
 
 <attr iphones_gesamt clientstate_priority present absent> 
 ```
@@ -217,7 +215,7 @@ Ersetze bei diesem Befehl iphone durch den Namen des Iphones welchen du zuvor ve
 Durch diesen Befehl reicht ein anwesendes Iphone aus, um dem FHEM eine Anwesenheit zu vermitteln. 
 
  
-```html
+```
 <attr iphones_gesamt clientstate_behavior relative> 
 
 <define doif_iphone1 doif> 
@@ -297,7 +295,7 @@ Klicke zuerst auf **DOIF_BeleuchtungFunk_manuell**. 
 Nun folgt die Konfiguration der soeben definierten Devices. Dazu weist du den Attributen der Devices bestimmte Werte zu: 
 
  
-```html
+```
 <attr DOIF_BeleuchtungFunk_Manuell room Beleuchtung> 
 
 <attr DOIF_BeleuchtungFunk_Manuell cmdState on|off> 
@@ -368,7 +366,7 @@ Wähl das Device **DOIF_BeleuchtungFunk_Sonne** aus. 
 Füge folgende Attribute hinzu:  
 
  
-```html
+```
 <attr DOIF_BeleuchtungFunk_Sonne room Beleuchtung>  
 
 <attr DOIF_BeleuchtungFunk_ Sonne cmdState on|off>  
@@ -412,7 +410,7 @@ Wähle nun das Device DOIF_BeleuchtungFunk_Werktage aus. 
 Füge folgende Attribute hinzu:  
 
  
-```html
+```
 <attr DOIF_BeleuchtungFunk_Werktage room Beleuchtung>  
 
 <attr DOIF_BeleuchtungFunk_Werktage cmdState on|off>  
@@ -906,7 +904,7 @@ Zunächst müssen in das HTML-Dokument **/opt/fhem/www/tablet/Beleuchtung.html**
 ```
  
 
-Damit steht das Grundgerüst. Die eigentlichen Funktionen werden im Folgenden erstellt und ersetzen die so ausgeklammerten **<!--  -->** Platzhalter. 
+Damit steht das Grundgerüst. Die eigentlichen Funktionen werden im Folgenden erstellt und ersetzen die so ausgeklammerten `<!--  -->` Platzhalter. 
 
  
 
@@ -920,7 +918,7 @@ Vertikale Einteilung
 
  
 
-Da es zwei zu steuernde Lichterketten gibt teilst du als nächstes den vorhandenen Platz vertikal in zwei gleichgroße Elemente. Das erste Element enthält die Steuerung für die Funksteckdose und kommt an die Stelle dieses Platzhalters **<!--  Bedienung Funk -->** .  
+Da es zwei zu steuernde Lichterketten gibt teilst du als nächstes den vorhandenen Platz vertikal in zwei gleichgroße Elemente. Das erste Element enthält die Steuerung für die Funksteckdose und kommt an die Stelle dieses Platzhalters `<!--  Bedienung Funk -->` .  
 
  
 ```html
@@ -934,7 +932,7 @@ Mit **<header>Modusauswahl Beleuchtung Funk</header>** legst du die Beschriftung
 
  
 
-Das zweite Element enthält die Steuerung für die WLAN-Steckdose und kommt an die Stelle dieses Platzhalters **<!--  Bedienung WLAN -->** . 
+Das zweite Element enthält die Steuerung für die WLAN-Steckdose und kommt an die Stelle dieses Platzhalters `<!--  Bedienung WLAN -->` . 
 
  
 ```
@@ -950,7 +948,7 @@ Der Schalter Manuell
 
  
 
-Der erste Schalter ist für den manuellen Modus und sehr umfangreich. Der Code kommt an Stelle des Platzhalters <!--  Schalter Manuell --> und die komplette Eingabe in HTML sieht folgendermaßen aus:  
+Der erste Schalter ist für den manuellen Modus und sehr umfangreich. Der Code kommt an Stelle des Platzhalters `<!--  Schalter Manuell -->` und die komplette Eingabe in HTML sieht folgendermaßen aus:  
 
  
 ```html
@@ -1258,7 +1256,7 @@ Wie du es schon zuvor gemacht hast, legst du nun das Verhalten des Labels fest, 
 
 Nun legst du fest, was in dem Popup-Fenster angezeigt werden soll und richten die Funktion zur Einstellung der Zeiten ein. 
 
-Dieser Code kommt an Stelle des Platzhalters **<!--  Funktion Popup-->**.  
+Dieser Code kommt an Stelle des Platzhalters `<!--  Funktion Popup-->.  
 
  
 ```html
@@ -1395,7 +1393,7 @@ Der Schalter Sonne
 
  
 
-Der zweite Schalter ist für den Modus Sonne. Dieser richtet sich das An- und Ausschalten der Beleuchtung nach dem Sonnenauf- und untergang. Der Code kommt an Stelle des Platzhalters **<!--  Schalter Sonne -->** und die komplette Eingabe in HTML sieht folgendermaßen aus:  
+Der zweite Schalter ist für den Modus Sonne. Dieser richtet sich das An- und Ausschalten der Beleuchtung nach dem Sonnenauf- und untergang. Der Code kommt an Stelle des Platzhalters `<!--  Schalter Sonne -->` und die komplette Eingabe in HTML sieht folgendermaßen aus:  
 
  
 ```html
@@ -1493,7 +1491,7 @@ data-background-icon="fa-square">
 ```
  
 
-Das ist der Code für den eigentlichen Schalter. Er funktioniert genauso, wie die anderen Schalter. Du verbindest mit data-device="d_ModusAuswahlFunk" den Schalter mit dem Modusauswahl-Device in FHEM und legst fest, dass dieser Schalter aktiv ist, wenn die Modusauswahl den Zustand Sonne hat, gleichzeitig  setzt ein Klick auf den Schalter die Modusauswahl auf Sonne.  
+Das ist der Code für den eigentlichen Schalter. Er funktioniert genauso, wie die anderen Schalter. Du verbindest mit **data-device="d_ModusAuswahlFunk"** den Schalter mit dem Modusauswahl-Device in FHEM und legst fest, dass dieser Schalter aktiv ist, wenn die Modusauswahl den Zustand Sonne hat, gleichzeitig  setzt ein Klick auf den Schalter die Modusauswahl auf Sonne.  
 
 Als Icon auf dem Schalter legst du eine Sonne fest. 
 
@@ -1807,7 +1805,7 @@ Der Schalter Anwesenheit
 
  
 
-Der vierte Schalter ist für den Modus Anwesenheit. Dieser richtet sich auch nach dem Sonnenauf- und untergang. Allerdings wird die Beleuchtung nur eingeschaltet, wenn auch jemand zuhause ist. Diese Funktion ist allerdings komplett in FHEM erstellt und hat auf das FTUI Frontend keinen Einfluss. Der Code kommt an Stelle des Platzhalters **<!--  Schalter Anwesenheit -->** und die komplette Eingabe in HTML sieht folgendermaßen aus:  
+Der vierte Schalter ist für den Modus Anwesenheit. Dieser richtet sich auch nach dem Sonnenauf- und untergang. Allerdings wird die Beleuchtung nur eingeschaltet, wenn auch jemand zuhause ist. Diese Funktion ist allerdings komplett in FHEM erstellt und hat auf das FTUI Frontend keinen Einfluss. Der Code kommt an Stelle des Platzhalters `<!--  Schalter Anwesenheit --> und die komplette Eingabe in HTML sieht folgendermaßen aus:  
 
  
 ```html
@@ -1887,7 +1885,7 @@ Der Schalter Aus
 
  
 
-Der letzte Schalter ist der Ausschalter. Dieser schaltet die Beleuchtung und die komplette Beleuchtungssteuerung aus. Der Code kommt an Stelle des Platzhalters **<!--  Schalter Aus -->** und die komplette Eingabe in HTML sieht folgendermaßen aus:  
+Der letzte Schalter ist der Ausschalter. Dieser schaltet die Beleuchtung und die komplette Beleuchtungssteuerung aus. Der Code kommt an Stelle des Platzhalters `<!--  Schalter Aus -->` und die komplette Eingabe in HTML sieht folgendermaßen aus:  
 
  
 ```html
@@ -1933,7 +1931,7 @@ Die Infobox
 
  
 
-Zum Schluss erstellst du noch eine Infobox, in der die Funktionsweisen der einzelnen Modis erklärt werden. Diese öffnet sich durch Klick auf ein Fragezeichen oberhalb der Schalter. Der Code kommt an Stelle des Platzhalters **<!--  Infobox-->** und die komplette Eingabe in HTML sieht folgendermaßen aus:  
+Zum Schluss erstellst du noch eine Infobox, in der die Funktionsweisen der einzelnen Modis erklärt werden. Diese öffnet sich durch Klick auf ein Fragezeichen oberhalb der Schalter. Der Code kommt an Stelle des Platzhalters `<!--  Infobox-->` und die komplette Eingabe in HTML sieht folgendermaßen aus:  
 
  
 ```html
@@ -2116,10 +2114,10 @@ data-background-color="blue">
 <div 	style="text-align: left">Manuell: Hierbei k&ouml;nnen Sie frei einstellen, wann die Beleuchtung angeschaltet (gr&uuml;n) und wann sie ausgeschaltet wird (rot). 
 
 </div> 
-
+```
  
 
-Im Popup-Fenster erstellst du hier keine Funktion, sondern zeigst nur die Icons der Modi und einen Erklärungstext darunter. </br> sorgt für einen Zeilenumbruch und damit für eine bessere Lesbarkeit. 
+Im Popup-Fenster erstellst du hier keine Funktion, sondern zeigst nur die Icons der Modi und einen Erklärungstext darunter. `</br>` sorgt für einen Zeilenumbruch und damit für eine bessere Lesbarkeit. 
 
  
 
