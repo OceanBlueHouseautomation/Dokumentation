@@ -796,7 +796,7 @@ myDifference($$$)
 } 
 
 ##########################################################> 
-
+````
  
 
 Beachten, dass die Funktion zwischen  
@@ -813,10 +813,10 @@ Anschließend muss die Datei mit klicken auf “Save 99_myUtils.pm” abgespeich
 
  
 
-Schritt 4 – Anlegen der Devices in FHEM  
+### Schritt 4 – Anlegen der Devices in FHEM  
 
 Setzte in der Kommandozeile folgenden Befehl ab: 
-
+````
 <define d_rainperiod1_a_haus dummy> 
 
 <define d_rainperiod2_a_haus dummy> 
@@ -830,7 +830,7 @@ Setzte in der Kommandozeile folgenden Befehl ab:
 <attr b_RegenBedingung_haus setList on off> 
 
 <attr b_RegenBedingung_haus useSetExtensions 1> 
-``
+````
  
 
 Die Dummys d_rainperiod1_a_haus und d_rainperiod2_a_haus speichern den angegeben Zeitraum.  In den Dummys d_rainpastperiod1_a_haus und d_rainpastperiod2_a_haus wird die Grenze für die Regenmenge in mm/qm gespeichert. Der Button wird je nach Erfüllung oder Nichterfüllung der Bedingungen aktiviert oder nicht.  
@@ -840,17 +840,17 @@ Die Dummys d_rainperiod1_a_haus und d_rainperiod2_a_haus speichern den angegeben
 Um zu prüfen, ob die angegebene Grenze überschritten wurde, muss vorab die die Regenmenge in der angegeben Periode ermittelt werden. Dies geschieht in einem Notify der bei einer Veränderung der Readings die Regenmenge neu ermittelt:  
 
  
-``
+````
 <define n_diffrain1_a_haus notify Regensensor:amount.*| d_rainperiod1_a_haus {my $interval=ReadingsVal(' d_rainperiod1_a_haus ','state','0')*3600;;;; my $diffRain=myDifference("".$interval."", "LogRegensensor", "3::");;;; fhem("set d_diffRain1_a_haus ".$diffRain."")}> 
-``
+````
  
 
 Ebenso muss die Regenmenge für die zweite Periode ermittelt werden:  
 
  
-``
+````
 <define n_diffrain2_a_haus notify Regensensor:amount.*| d_rainperiod2_a_haus {my $interval=ReadingsVal(' d_rainperiod2_a_haus ','state','0')*3600;;;; my $diffRain=myDifference("".$interval."", "LogRegensensor", "3::");;;; fhem("set d_diffRain2_a_haus ".$diffRain."")}> 
-``
+````
  
 
 Anmerkung: Solltest du im vorherigen Schritt den Devicenamen nicht aus dem Eintrag entfernt haben, musst du die “3::” im Notify mit “4::” ersetzen.  
@@ -858,11 +858,11 @@ Anmerkung: Solltest du im vorherigen Schritt den Devicenamen nicht aus dem Eintr
  
 
 Die Regenmengen für beide Perioden werden in zwei Dummys gespeichert, die noch angelegt werden müssen:  
-``
+````
 <define d_diffRain1_a_haus dummy> 
 
 <define d_diffRain2_a_haus dummy> 
-``
+````
  
 
 Ist die angegeben Regenmenge kleiner als die tatsächliche Regenmenge der angegebenen Periode, so wird ein Button auf on gesetzt. Andernfalls auf off. Dafür wird in einem Notify geprüft, ob die Bedingungen erfüllt sind, um den Button auf den entsprechenden Zustand zu stellen:  
@@ -874,7 +874,7 @@ Ist die angegeben Regenmenge kleiner als die tatsächliche Regenmenge der angege
 ### Schritt 5 - Einfügen in die FTUI 
 
 Für die Steuerung über die FTUI, musst du die folgenden Codezeilen unter den Kommentar <!--  Automatisierter Betrieb Regensensor--> einfügen: 
-``html
+````html
        <div class="cell-20 center-align"> 
 
          <div class="row"> 
