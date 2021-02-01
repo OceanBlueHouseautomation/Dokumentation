@@ -1,8 +1,16 @@
 ## Testkonzept
-Die agile Entwicklung ermöglicht immer nach Zyklus den aktuellen Stand zu testen und festzuhalten.
+Die agile Entwicklung ermöglicht immer nach Zyklus den aktuellen Stand zu testen und festzuhalten. Daher setzen wir auf Modultests und einen Gesamttest.
 
-* Ein fertiges Modul wird zuerst vom Entwickler getestet. Nach erfolgreichem Test wird zur Qualitätssicherung ein weiterer Durchgang mit von einem anderen Team-Mitglied (vorzugsweise kein Entwickler) durchgeführt. Beide Durchgänge müssen dokumentiert werden.
-* Testkriterien sind dem Anforderungskatalog des entsprechenden Moduls zu entnehmen.
-* Der Test gilt als erfolgreich, wenn alle Anforderungen vollumfänglich erfüllt sind.
-* Das Testprotokoll muss vom Tester/den Testern (digital) unterzeichnet (Name reicht) werden (bzw. muss eine Bestätigung des Testes erfolgen) und im Wiki(Teams) dokumentiert werden.
+### Modultest
+* Ein fertiges Modul wird zuerst vom Entwickler getestet (Entwicklertest)
+* Nach erfolgreichem Entwicklertest wird zur Qualitätssicherung ein weiterer Durchgang mit von einem anderen Team-Mitglied (vorzugsweise kein Entwickler) durchgeführt (Qualitätstest)
+* Testkriterien sind dem Anforderungskatalog des entsprechenden Moduls zu entnehmen
+* Der Test gilt als erfolgreich, wenn alle Anforderungen vollumfänglich erfüllt sind
+* Zusätzlich sollen bei Entwickler und Qualitätstest ein Stresstest mit falschangaben überprüft werden
+
+### Gesamttest
+* Das gesamte System wird nachdem alle Module fertiggestellt sind im komplett getestet
+* 4 Augen Prinzip
+* Auch hier wird ein Stresstest vollzogen
+
 
