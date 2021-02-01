@@ -30,7 +30,7 @@ Da der Aufbau der Steuerung für beide Lichterketten weitgehend identisch ist, w
 
  
 
-## Schritt 1 
+### Schritt 1 
 
 Vorarbeit: Den Längen- und Breitengrad festlegen 
 
@@ -49,7 +49,7 @@ Damit du **SUNIRSE_EL** nutzen kannst, muss in der Konfiguration (fhem.cfg) der 
 Dazu benötigen du folgende Definitionen: 
 
  
-```bash
+```html
 <attr global latitude 52.51626> 
 
 <attr global longitude 13.37778> 
@@ -62,15 +62,15 @@ Als Internet-Dienst eignet sich beispielsweise Google Maps-Hilfe (Breiten- und L
 
  
 
-Folgende Funktionen gibt dir SUNRISE_EL: 
+Folgende Funktionen gibt dir **SUNRISE_EL**: 
 
  
 
-Sunrise / sunset gibt die absolute Zeit des nächsten Sonnenauf- bzw -untergangs zurück, wobei 24h addiert werden, sofern das entsprechende Ereignis am nächsten Tag stattfindet 
+* Sunrise / sunset gibt die absolute Zeit des nächsten Sonnenauf- bzw -untergangs zurück, wobei 24h addiert werden, sofern das entsprechende Ereignis am nächsten Tag stattfindet 
 
-Sunrise_el /sunset_rel gibt die relative Zeit bis zum nächsten Sonnenauf- bzw. -untergang zurück. 
+* Sunrise_el /sunset_rel gibt die relative Zeit bis zum nächsten Sonnenauf- bzw. -untergang zurück. 
 
-Sunrise_abs / sunset_abs gibt die absolute Zeit für den aktuellen Tag. 
+* Sunrise_abs / sunset_abs gibt die absolute Zeit für den aktuellen Tag. 
 
  
 
@@ -78,11 +78,11 @@ So steuerst du SUNRISE_EL:
 
  
 
-Außenlampe - Steuerung An-/Ausschaltzeit 
+* Außenlampe - Steuerung An-/Ausschaltzeit 
 
-define AussenlampeAn1 at *{sunset(0,"17:00","22:00")} set EG.Diele.Aussenlampe on 
+* define AussenlampeAn1 at *{sunset(0,"17:00","22:00")} set EG.Diele.Aussenlampe on 
 
-define AussenlampeAus1 at *{sunrise(0,"05:00","07:30")} set EG.Diele.Aussenlampe off 
+* define AussenlampeAus1 at *{sunrise(0,"05:00","07:30")} set EG.Diele.Aussenlampe off 
 
  
 
@@ -93,15 +93,13 @@ In FHEM nutzt du den sogenannten bürgerlichen Sonnenuntergang/-aufgang, der als
 Um die Zeiten kontrollieren zu können, kannst du in der FHEM-Befehlszeile den Befehl 
 
  
-
-list AussenlampeAn1 
-
+**list AussenlampeAn1**
  
 
 eingeben und mit der <Enter>-Taste bestätigen. du sehen in der Ausgabe z.B. folgendes: 
 
  
-
+```
 Internals:   
 
 DEF    *{sunset(0,"17:00","22:00")} set EG.Diele.Aussenlampe on   
@@ -121,7 +119,7 @@ TRIGGERTIME 1358527029
 TYPE    at 
 
 Attributes:  room    Diele 
-
+```
  
 
 Der Sonnenuntergang liegt am genannten Tag innerhalb des Start-/Ende-Zeitraums, sodass die Lampe um 17:37 Uhr eingeschaltet wird. 
@@ -130,14 +128,14 @@ Die Ausgabe von
 
  
 
-List AussenlampeAus1 
+**List AussenlampeAus1**
 
  
 
 lautet: 
 
  
-
+```
 Internals:   
 
 DEF    *{sunrise(0,"05:00","07:30")} set EG.Diele.Aussenlampe off 
@@ -159,14 +157,14 @@ TRIGGERTIME 1358490600
 Attributes:   
 
 room    Diele 
-
+```
  
 
 Hier liegt der Sonnenaufgang noch außerhalb des Start-/Ende-Zeitraums, so dass die Lampe um 07:30 Uhr ausgeschaltet wird. 
 
  
 
-## Schritt 2 
+### Schritt 2 
 
 Vorarbeit: Anwesenheitserkennung 
 
