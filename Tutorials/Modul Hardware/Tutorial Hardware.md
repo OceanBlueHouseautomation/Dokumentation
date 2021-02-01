@@ -121,11 +121,14 @@ Jetzt wird es nochmal technisch, das ist aber nichts, was du nicht hinkriegst!
 ## Abschluss
 Schon fertig?
 Dann bist du jetzt bereit, dein erstes Automationsprojekt umzusetzen. Deine Hardware ist angeschlossen und bereit für den Einsatz.
+Wie erstellt man eigentlich eine schöne, schlichte und moderne Weboberfläche? Das lernst du in diesem Tutorial:
+https://github.com/OceanBlueHouseautomation/Dokumentation/blob/main/Tutorials/Modul%20Grundlagen%20FTUI/Tutorial%20Grundlagen%20FTUI.md
+
 Lerne hier, wie du smarte Steckdosen einbindest, am Beispiel einer coolen Weihnachtsbeleuchtung:
-https://github.com/OceanBlueHouseautomation/Dokumentation/blob/main/Tutorials/Modul%20Weihnachtsbeleuchtung/Tutorial.md
+https://github.com/OceanBlueHouseautomation/Dokumentation/blob/main/Tutorials/Modul%20Weihnachtsbeleuchtung/Tutorial%20Weihnachtsbeleuchtung.md
 
 Vielleicht hast du dir aber auch eine Rollladensteuerung auf Basis eines Shelly 2.5 gekauft? So bindest du diese ein:
-https://github.com/OceanBlueHouseautomation/Dokumentation/blob/main/Tutorials/Modul%20Rolladensteuerung/Rolladensteuerung.md
+https://github.com/OceanBlueHouseautomation/Dokumentation/blob/main/Tutorials/Modul%20Rolladensteuerung/Tutorial%20Rolladensteuerung.md
 
 Viel Spaß!
 
