@@ -1,10 +1,12 @@
-# Modul Kamera
+# Wie du mit FHEM alles im Blick hast
 
 ## Integration Überwachungskamera
 Dieses Tutorial beinhaltet ...
 
 * ein Konzept für die Realisierung
 * die Ausarbeitung weiterer nützlicher Funktionalitäten
+
+... damit du immer alles im Blick hast, was in deinen 4 Wänden passiert.
 
 ## Realisierungskonzept Überwachungskamera
 Grundsätzlich lässt sich sagen, dass die Umsetzung einer Kamera zur Videoüberwachung mittels eines Raspberry Pi’s recht simpel vonstatten geht.
