@@ -76,10 +76,10 @@ Eine Integration in FTUI könnte dann zum Beispiel so realisiert werden. Viellei
 Schon fertig?
 Wir haben noch weitere Tutorials, um dir den Alltag zu erleichtern.
 Lerne hier, wie du immer über die Verkehrslage auf deinen Verkehrsrouten informiert bleibst:
-https://github.com/OceanBlueHouseautomation/Dokumentation/blob/main/Tutorials/Modul%20Verkehrsinfo/Verkehrinfo.md
+https://github.com/OceanBlueHouseautomation/Dokumentation/blob/main/Tutorials/Modul%20Verkehrsinfo/Tutorial%20Verkehrsinfo.md
 
 Schau dir gerne auch an, wie du eine Sturmwarnung implementieren kannst, die dich bei Sturm direkt auf deinem iPhone warnt:
-https://github.com/OceanBlueHouseautomation/Dokumentation/blob/main/Tutorials/Modul%20Sturmwarnung/Sturmwarnung.md
+https://github.com/OceanBlueHouseautomation/Dokumentation/blob/main/Tutorials/Modul%20Sturmwarnung/Tutorial%20Sturmwarnung.md
 
 Viel Spaß!
 
