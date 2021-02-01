@@ -29,7 +29,7 @@ Alternativ dazu kannst du auch das über die FTUI bedienbare Widget-Switch benut
 ## FTUI Anlegen   
 
 Zunächst müssen in das HTML-Dokument /opt/fhem/www/tablet/Hausgartenpumpe.html (evtl Pfad) folgende Codezeilen eingefügt werden. 
-``html
+````html
 <!DOCTYPE html> 
 <html> 
 <head></head> 
@@ -47,7 +47,7 @@ Zunächst müssen in das HTML-Dokument /opt/fhem/www/tablet/Hausgartenpumpe.html
 </div> 
 </body> 
 </html> 
-``
+````
    
 
 Die Pumpe kann teilautomatisiert und automatisiert betrieben werden. Wir fangen mit dem teilautomatisierten Betrieb an. 
