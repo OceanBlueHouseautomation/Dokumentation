@@ -37,17 +37,17 @@ Der Selbstbau-CUL ist ein Stück Hardware, welches du benötigst um ein 433 MHz-
 - CC1101 Funkmodul mit 868 MHz oder 433 MHz (von uns verwendet) inkl. Antenne
 - Jumper Kabel weiblich-weiblich
 Der Zusammenbau des CUL ist relativ einfach:
-| Arduino Nano      | Funkmodul            |
-| -------------     |:-------------:       |
-| Pin 17 - VCC 3,3V | PIN 1 - VDD          |
-| Pin 14 - D11      | PIN 3 - SI (MOSI)    |
-| Pin 16 - D13      | PIN 4 - SCK          |
-| Pin 15 - D12      | PIN 5 - SO (MISO)    |
-| PIN 5 - D02       | PIN 6 - GDO2         |
-| Pin 13 - D10      | PIN 7 - CSn (SS)     |
-| Pin 6 - D03       | PIN 8 - GDO0         |
-| PIN 4 - GND       | PIN 9 GND            |
-| nicht belegt      | PIN 2 & 10           |
+|Arduino Nano      |Funkmodul            |
+|-------------     |:-------------:      |
+|Pin 17 - VCC 3,3V |PIN 1 - VDD          |
+|Pin 14 - D11      |PIN 3 - SI (MOSI)    |
+|Pin 16 - D13      |PIN 4 - SCK          |
+|Pin 15 - D12      |PIN 5 - SO (MISO)    |
+|PIN 5 - D02       |PIN 6 - GDO2         |
+|Pin 13 - D10      |PIN 7 - CSn (SS)     |
+|Pin 6 - D03       |PIN 8 - GDO0         |
+|PIN 4 - GND       |PIN 9 GND            |
+|nicht belegt      |PIN 2 & 10           |
 
 Schließe den Arduino Nano mit angeschlossener Antenne nun via mitgeliefertem USB-Kabel an deinen Pi an.
 
