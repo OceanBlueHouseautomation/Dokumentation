@@ -63,9 +63,9 @@ Der teilautomatisierte Betrieb bietet die Möglichkeit die Bewässerung manuell 
 Füge in der Kommandozeile im FHEM folgenden Befehl ein: 
 
   
-``
+````
 <define b_gartenpumpe_t_haus dummy>  
-``
+````
   
 
 Die Namensgebung unterliegt folgender Konvention: t_ bedeutet teilautomatisierter Betrieb, a_ automatischer Betrieb, _haus gibt an, dass es sich um einen Bestandteil der Hausgartenpumpe handelt während _schreber Bestandteile der Schrebergartenpumpe kennzeichnet. Um die Einrichtung zu erleichtern wird empfohlen die Konvention so wie in der Dokumentation zu übernehmen, wenn du eigene Namen verwenden möchstest wird dazu geraten eine eigene Konvention zu entwerfen. 
@@ -75,11 +75,11 @@ Die Namensgebung unterliegt folgender Konvention: t_ bedeutet teilautomatisierte
 Um den Dummy zu konfigurieren fügst du in die Kommandozeile folgende Befehle ein: 
 
   
-``
+````
 <attr b_gartenpumpe_t_haus setList on off> 
 
 <attr b_gartenpumpe_t_haus useSetExtensions 1> 
-``
+````
   
 
 Es wurde ein Button angelegt und durch das Attribut „setList“ mit dem Wert „on off“ kann dieser die Zustände on und off annehmen. Durch das Attribut „useSetExtensions“ mit dem Wert „1“ werden dem Button die Extrafunktionen hinzugefügt, die unter anderem für den Timerbetrieb notwendig sind („on-for-timer“ ermöglicht den Button für einen bestimmen Zeitraum einzuschalten und danach automatisiert auszuschalten).  
@@ -89,13 +89,13 @@ Es wurde ein Button angelegt und durch das Attribut „setList“ mit dem Wert �
 Für die Timerfunktion wird noch ein Dummy und ein Button benötigt die mit folgenden Befehlen implementiert werden:  
 
   
-``
+````
 <define d_timer_t_haus dummy> 
 
 <define b_timer_t_haus dummy> 
 
 <attr b_timer_t_haus setList on off> 
-``
+````
   
 
 Im Dummy d_timer_t_haus wird die Dauer für den Timerbetrieb in Minuten gespeichert, mit dem Button b_timer_t_haus wird der Timerbetrieb aktiviert. 
@@ -105,7 +105,7 @@ Im Dummy d_timer_t_haus wird die Dauer für den Timerbetrieb in Minuten gespeich
 Um die Bewässerung einmalig manuell zu einer definierbaren Uhrzeit für eine bestimmte Dauer einzuschalten, müssen folgende Befehle in die Kommandozeile eingegeben werden: 
 
   
-``
+````
 <define d_uhrzeit_t_haus dummy> 
 
 <define d_uhrzeittimer_t_haus dummy> 
@@ -113,7 +113,7 @@ Um die Bewässerung einmalig manuell zu einer definierbaren Uhrzeit für eine be
 <define b_uhrzeit_t_haus dummy> 
 
 <attr b_uhrzeit_t_haus setList on off> 
-``
+````
   
 
 Im Dummy d_uhrzeit_t_haus wird die Uhrzeit im Format %H:%M (Stunden:Minuten) gespeichert, der Dummy d_uhrzeittimer_t_haus enthält die Dauer der Bewässerung in Minuten und der Dummy aktiviert die Bewässerung zu einer definierbaren Uhrzeit für eine bestimmte Dauer. 
@@ -123,7 +123,7 @@ Im Dummy d_uhrzeit_t_haus wird die Uhrzeit im Format %H:%M (Stunden:Minuten) ges
 ### Schritt 2 - Einfügen der FTUI  
 
 Um die im FHEM angelegten Devices zum teilautomatisierten Betrieb der Pumpe über die FTUI steuern zu können, müssen folgende Codezeilen in das Dokument Hausgartenpumpe.html unter den Kommentar <!--  Teilautomatisierter Betrieb --> eingefügt werden. 
-``html
+````html
 <li data-row="2" data-col="2" data-sizex="3" data-sizey="2" class="left-align">                 
 
     <header>Hausgarten</header> 
@@ -269,7 +269,7 @@ Um die im FHEM angelegten Devices zum teilautomatisierten Betrieb der Pumpe übe
               </div> 
 
     </li> 
-``
+````
  
 
 Nach abspeichern des Dokuments ist über die FTUI ein Button zum Ein- und Ausschalten der Bewässerung des Hausgartens bedienbar. Außerdem kann die Bewässerung des Hausgartens für die Dauer eines Timers direkt oder zu einer bestimmten Uhrzeit eingeschaltet werden. 
@@ -294,7 +294,7 @@ Der Punkt Menu umfasst einen Ein- und Ausschalter für den Automatikbetrieb, die
 Setzte in der Kommandozeile folgenden Befehl ab: 
 
  
-``
+````
 <define b_gartenpumpe_a_haus dummy> 
 
 <attr b_gartenpumpe_a_haus setList on off> 
@@ -304,7 +304,7 @@ Setzte in der Kommandozeile folgenden Befehl ab:
 <define d_uhrzeit_a_haus dummy> 
 
 <define d_uhrzeittimer_a_haus dummy> 
-``
+````
  
 
 Der Button b_gartenpumpe_a_haus aktiviert den automatische Betrieb.   
@@ -316,13 +316,13 @@ Im Dummy d_uhrzeittimer_a_haus wird die Dauer für den Timerbetrieb in Minuten g
 Für die Auswahl der Tage musst du folgende Befehle in der Kommandozeile eingeben: 
 
  
-``
+````
 <define d_pumpetageswahl_a_haus dummy> 
 
 <attr d_pumpetageswahl_a_haus readingList Montag Dienstag Mittwoch Donnerstag Freitag Samstag Sonntag> 
 
 < attr d_pumpetageswahl_a_haus setList Montag:on,off Dienstag:on,off Mittwoch:on,off Donnerstag:on,off Freitag:on,off Samstag:on,off Sonntag:on,off> 
-``
+````
  
 
 Im Dummy d_pumpetageswahl_a_haus wird gespeichert an welchen Tagen die Bewässerung automatisch durchgeführt werden soll. Dazu werden mit “readingList” die Wochentage dem Dummy hinzugefügt. Mit dem Kommando “setList”  werden die möglichen set Kommandos -”on off” - für die Readings spezifiziert. 
@@ -334,7 +334,7 @@ Im Dummy d_pumpetageswahl_a_haus wird gespeichert an welchen Tagen die Bewässer
 Um die im FHEM angelegten Devices über die FTUI steuern zu können, müssen die folgenden Codezeilen und den Kommentar <!--  Automatisierter Betrieb Menu --> eingefügt werden.  
 
  
-``html
+````html
 <li data-row="3" data-col="2" data-sizex="4" data-sizey="2" class="left-align">                   
 
 <header>Automatikbetrieb</header> 
@@ -662,7 +662,7 @@ Um die im FHEM angelegten Devices über die FTUI steuern zu können, müssen die
          </div> 
 
        </div> 
-``
+````
 Nach abspeichern des Dokuments ist über die FTUI ein Button zum Ein- und Ausschalten des automatischen Betriebs der Bewässerung des Hausgartens bedienbar. Außerdem ist die Dauer, die Uhrzeit und die Wochentage der Bewässerung wählbar. 
 
  
@@ -674,7 +674,7 @@ Im Bereich Regensensor wird definiert ab welchen Regenmengen, zu einem frei fest
 ### Schritt 1 – Regensensor anlegen 
 
 Der folgende Code integriert einen Regensensor von mobile-alerts.eu in dein System: 
-``
+````
 <define Regensensor HTTPMOD https://measurements.mobile-alerts.eu/Home/MeasurementDetails?deviceid=0824D9A1B72A&vendorid=244DD836-16DE-465E-B265-B3F1596A26D4&appbundle=de.synertronixx.remotemonitor 420> 
 
 <attr Regensensor userattr reading01Name reading01OExpr reading01Regex reading02Name reading02Regex> 
@@ -698,7 +698,7 @@ Der folgende Code integriert einen Regensensor von mobile-alerts.eu in dein Syst
 <attr Regensensor stateFormat Regenmenge: amount mm <br> Messung: timestamp> 
 
 <attr Regensensor timeout 410> 
-``
+````
 Das Gerät wird nun alle 420 Sekunden die aktuellen Regendaten abfragen. Warum nur alle 420 Sekunden? Da der Windsensor ohnehin nicht häufiger Daten aufliefert, wäre ein niedrigeres Prüfintervall nicht sinnvoll bzw. würde nur unnötige Abfragen generieren. 
 
  
@@ -706,21 +706,21 @@ Das Gerät wird nun alle 420 Sekunden die aktuellen Regendaten abfragen. Warum n
 ### Schritt 2 – Erstellen eines Filelogs 
 
 Um die Regenmenge eines definierten Zeitraumes zu ermitteln, müssen die Regenmengen gespeichert und für FHEM auslesbar sein. Dafür muss eine Datei angelegt werden, in welche diese Werte gelogged werden: 
-``
+````
 <define LogRegensensor FileLog ./log/regensensor.log  Regensensor:(amount).*> 
-``
+````
  
 
 Standardmäßig wird neben dem Datum, dem Reading (amount) und Readingwert, das Device eingetragen. Durch den Befehl outputFormat kannst du den Devicenamen rausnehmen:  
-``
+````
 <attr LogRegensensor outputFormat "$TIMESTAMP $EVENT\n"> 
-``
+````
  
 
 ### Schritt 3 – Einfügen der Differenzfunktion 
 
 Um die Regenmenge einer Perioade ausrechnen zu können, muss die Differenz zwischen dem ersten und letzten Wert der Periode berechnet werden. Dafür musst du in der Datei 99_myUtils eine Subroutine übernehmen. Hierfür gehst du auf “Edit files” und dann auf “99_myUtils.pm” und fügst folgende Funktion ein: 
-``
+````
 <########################################################## 
 
 # myDifference 
@@ -984,7 +984,7 @@ Für die Steuerung über die FTUI, musst du die folgenden Codezeilen unter den K
          </div>  
 
        </div> 
-``
+````
  
 
 ## Automatisierter Betrieb – Temperatursensor 
@@ -996,7 +996,7 @@ In diesem Abschnitt wird die Temperatur-Überprüfung für die Bewässerung eing
 Falls du beim Rollladen den Temperatursensor implementiert hast kannst du diesen Schritt überspringen. 
 
 Der folgende Code integriert einen Temperatursensor von mobile-alerts.eu in dein System (eine genauere Anleitung zur Integration von Sensoren findest du beim Tutorial der Sturmwarnung):  
-``
+````
 < define Temperatursensor HTTPMOD https://measurements.mobile-alerts.eu/Home/MeasurementDetails?deviceid=03589FAD85A0&vendorid=244DD836-16DE-465E-B265-B3F1596A26D4&appbundle=de.synertronixx.remotemonitor 420 > 
 
 < attr Temperatursensor userattr reading01Name reading01OExpr reading01Regex reading02Name reading02Regex reading03Name reading03Regex > 
@@ -1018,23 +1018,23 @@ Der folgende Code integriert einen Temperatursensor von mobile-alerts.eu in dein
 < attr Temperatursensor reading02Regex ([^>]\d+[.]\d+[.]\d+\s\d+[:]\d+[:]\d+) > 
 
 < attr Temperatursensor stateFormat Temperatur: temperature °C <br> Messung: timestamp > 
-``
+````
  
 
 ### Schritt 2 – Erstellen eines FileLogs 
 
 Auch für den Temperatursensor müssen die Temperaturwerte gespeichert. Daher musst du analog zum Regensensorlog eine Datei anlegen:  
-``
+````
 < defmod LogTemperatursensor FileLog ./log/temperatursensor.log  Temperatursensor:(temperature).*> 
 
 <attr LogTemperatursensor outputFormat "$TIMESTAMP $EVENT\n"> 
-``
+````
  
 
 ### Schritt 3 - Einfügen der Durchschnittsfunktion  
 
 Analog zur Differenzfunktion, musst du die Durchschnittsfunktion in der 99_myUtils.pm einfügen. Hierfür gehst du auf “Edit files” und dann auf “99_myUtils.pm” und fügen folgende Funktion ein: 
-``
+````
 <########################################################## 
 
 # myAverage 
@@ -1086,7 +1086,7 @@ myAverage($$$)
 } 
 
 ##########################################################> 
-``
+````
 Erinnerung: Die Funktion muss zwischen der Differenzfunktion und “1;” eingefügt werden. Anschließend musst du die Datei abspeichern. 
 
  
@@ -1094,7 +1094,7 @@ Erinnerung: Die Funktion muss zwischen der Differenzfunktion und “1;” eingef
 ### Schritt 4 – Anlegen der Devices 
 
 Die Devices müssen analog zum Regensensor angelegt werden. Ist die tatsächliche Durchschnittstemperatur höher als die angegebene Durchschnittstemperatur der definierten Periode und die tatsächliche Temperatur höher als die angegebene Temperatur, ist die Bedingung erfüllt: 
-``
+````
 <define d_avgtempperiod_a_haus dummy>  
 
 <define d_avgTempPast_a_haus dummy> 
@@ -1102,17 +1102,17 @@ Die Devices müssen analog zum Regensensor angelegt werden. Ist die tatsächlich
 <define d_avgTempNow_a_haus dummy>  
 
 <define d_avgtemp_a_haus dummy> 
-``
+````
  
 
 Als nächstes muss ein Notify angelegt werden, der die Durchschnittstemperatur der angegebenen Periode berechnet: 
-``
+````
 <define n_avgtemp_a_haus notify Temperatursensor:temperature.*|d_avgtempperiod_a_haus {my $interval=ReadingsVal('d_avgtempperiod_a_haus','state','0')*3600;;;; my $avgTemp=myAverage("".$interval."", "LogTemperatursensor", "3::");;;; fhem("set d_avgtemp_a_haus ".$avgTemp."")}> 
-``
+````
  
 
 Abschließend müssen in einem Notify die Bedingungen geprüft werden. Sind diese Erfüllt wird der Button “b_TempBedingung_a_haus” auf on gesetzt: 
-``
+````
 <define n_PumpAvgTemp_a_haus notify Temperatursensor:temperature.*|d_avgTempPast_a_haus|d_avgTempNow_a_haus|d_avgtemp_a_haus {my $avgTemp1=ReadingsVal('d_avgtemp_a_haus','state','0');;;; my $avgTempPast=ReadingsVal('d_avgTempPast_a_haus','state','0');;;; my $avgTempNow=ReadingsVal('d_avgTempNow_a_haus','state','0');;;; my $avgTemp2=ReadingsVal('Temperatursensor','temperature','0');;;;if($avgTemp1 > $avgTempPast and $avgTemp2 > $avgTempNow){fhem("set b_TempBedingung_a_haus on")} else {fhem("set b_TempBedingung_a_haus off")}}> 
 
  
@@ -1122,13 +1122,13 @@ Abschließend müssen in einem Notify die Bedingungen geprüft werden. Sind dies
 <attr b_TempBedingung_a_haus setList on off> 
 
 <attr b_TempBedingung_a_haus useSetExtensions 1> 
-``
+````
  
 
 ### Schritt 5 - Einfügen der FTUI 
 
 Für die Steuerung über die FTUI zu ermöglichen, musst du die folgenden Codezeilen unter den Kommentar <!--  Automatisierter Betrieb Temperatursensor--> eingefügt werden: 
-``html
+````html
        <div class="cell-20"> 
 
         <div class="sheet"> 
@@ -1230,7 +1230,7 @@ Für die Steuerung über die FTUI zu ermöglichen, musst du die folgenden Codeze
         </div> 
 
        </div> 
-``
+````
  
 
 ## Automatisierter Betrieb – Windsensor 
@@ -1242,7 +1242,7 @@ In diesem Abschnitt wird die Wind-Überprüfung für die Bewässerung eingericht
 Falls du den Windsensor bereits bei der Sturmwarnung bei der Sturmwarnung implementiert hast kannst du diesen Schritt überspringen. 
 
 Der folgende Code integriert einen Windsensor von data199 in dein System. Im Attribut requestData musst du als deviceids und phoneid die Daten wählen, die dein gewünschter mobile-alerts.eu-Sensor besitzt. Du erhältst diese über den direkten Link auf mobile-alerts.eu hinter dem "?". Lasse die restlichen Einstellungen und Befehle jedoch unverändert: 
-``
+````
 <defmod WindsensorAPI HTTPMOD https://www.data199.com/api/pv1/device/lastmeasurement 420> 
 
 <attr WindsensorAPI userattr requestData> 
@@ -1260,7 +1260,7 @@ Der folgende Code integriert einen Windsensor von data199 in dein System. Im Att
 <attr WindsensorAPI timeout 410> 
 
 <attr WindsensorAPI userReadings wind_direction:devices_01_measurement_wd.* { int(ReadingsVal("WindsensorAPI","devices_01_measurement_wd",0))/16*360 },  wind_speed:devices_01_measurement_ws.* { ReadingsVal("WindsensorAPI","devices_01_measurement_ws",0)/1000*3600 },  wind_gust:devices_01_measurement_wg.* { ReadingsVal("WindsensorAPI","devices_01_measurement_wg",0)/1000*3600 },  timestamp:devices_01_measurement_ts.* { POSIX::strftime("%F %T", localtime(ReadingsVal("WindsensorAPI","devices_01_measurement_ts",0))) },> 
-``
+````
 Das Gerät wird nun alle 420 Sekunden die aktuellen Winddaten abfragen. Warum nur alle 420 Sekunden? Da der Windsensor ohnehin nicht häufiger Daten aufliefert, wäre ein niedrigeres Prüfintervall nicht sinnvoll bzw. würde nur unnötige Abfragen generieren. 
 
  
@@ -1268,17 +1268,17 @@ Das Gerät wird nun alle 420 Sekunden die aktuellen Winddaten abfragen. Warum nu
 ### Schritt 2 – Anlegen der Devices 
 
 Zuerst musst du die Dummys anlegen in denen die über die FTUI eingegebenen Werte gespeichert werden: 
-``
+````
 <define d_windboeengeschwindigkeit_haus dummy> 
 
 <define d_windgeschwindigkeit_haus dummy> 
-``
+````
  
 
 Anschließend muss in einem Notify geprüft werden, ob die Bedingung erfüllt ist. Bei Erfüllung der Bedingung wird der Button “b_WindBedingung_haus” auf “on” gesetzt: 
 
  
-``
+````
 <define n_PumpWind_Haus notify d_windgeschwindigkeit_Haus|d_windboeengeschwindigkeit_haus|WindsensorAPI:wind_speed.*|WindsensorAPI:wind_gust.* {my $wind=ReadingsVal('WindsensorAPI','wind_speed','0')/3.6 ;; my $boee=ReadingsVal('WindsensorAPI','wind_gust','0')/3.6;;my $windKleinerAls=ReadingsVal('d_windgeschwindigkeit_haus','state','0');;my $boeeKleinerAls=ReadingsVal('d_windboeengeschwindigkeit_haus','state','0');; if($wind<$windKleinerAls and $boee<$boeeKleinerAls){fhem("set b_WindBedingung_haus on")}else {fhem("set b_WindBedingung_haus off")}}> 
 
  
@@ -1288,13 +1288,13 @@ Anschließend muss in einem Notify geprüft werden, ob die Bedingung erfüllt is
 <attr b_WindBedingung_haus setList on off> 
 
 <attr b_WindBedingung_haus useSetExtensions 1> 
-``
+````
  
 
 ### Schritt 3 - Einfügen der FTUI 
 
 Für die Steuerung über die FTUI zu ermöglichen, müssen die folgenden Codezeilen unter den Kommentar <!--  Automatisierter Betrieb Windsensor--> eingefügt werden: 
-``html
+````html
        <div class="cell-20 center-align"> 
 
              <div class="large darker thin cell"> 
@@ -1348,21 +1348,21 @@ Für die Steuerung über die FTUI zu ermöglichen, müssen die folgenden Codezei
      </div> 
 
 </li> 
-``
+````
  
 
 ## Automatisierter Betrieb - Aktivierung 
 
 Nach Einrichtung der Zeitpunktauswahl und der aller Bedingungen, musst du eine DOIF anlegen, welche überprüft, ob alle Bedingungen erfüllt sind. Bei Erfüllung wird die automatische Bewässerung zur angegebenen Zeit gestartet:  
-``
+````
 <define doif_PumpHaus DOIF { if((([d_pumpetageswahl_a_haus:Montag] =~ "on" and [[d_uhrzeit_a_haus]|Mo])or([d_pumpetageswahl_a_haus:Dienstag] =~ "on" and [[d_uhrzeit_a_haus]|Di])or([d_pumpetageswahl_a_haus:Mittwoch] =~ "on" and [[d_uhrzeit_a_haus]|Mi])or([d_pumpetageswahl_a_haus:Donnerstag] =~ "on" and [[d_uhrzeit_a_haus]|Do])or([d_pumpetageswahl_a_haus:Freitag] =~ "on" and [[d_uhrzeit_a_haus]|Fr])or([d_pumpetageswahl_a_haus:Samstag] =~ "on" and [[d_uhrzeit_a_haus]|Sa])or([d_pumpetageswahl_a_haus:Sonntag] =~ "on" and [[d_uhrzeit_a_haus]|So])) and [b_gartenpumpe_a_haus] eq "on" and [b_RegenBedingung_haus] eq "on" and [b_TempBedingung_haus] eq "on" and [b_WindBedingung_haus] eq "on") {my $timer=ReadingsVal('d_uhrzeittimer_a_haus','state','0')*60 ;; fhem("set  b_gartenpumpe_t_haus on-for-timer ".$timer."");; fhem("set pushAll message Automatische Bewässerung im Hausgarten aktiviert!")}}> 
-``
+````
  
 
 Nun möchtest du noch eine Nachricht bekommen, die dir den Grund nennt, falls die Bewässerung startet: 
-``
+````
 <{if((([d_pumpetageswahl_a_haus:Montag] =~ "on" and [[d_uhrzeit_a_haus]|Mo])or([d_pumpetageswahl_a_haus:Dienstag] =~ "on" and [[d_uhrzeit_a_haus]|Di])or([d_pumpetageswahl_a_haus:Mittwoch] =~ "on" and [[d_uhrzeit_a_haus]|Mi])or([d_pumpetageswahl_a_haus:Donnerstag] =~ "on" and [[d_uhrzeit_a_haus]|Do])or([d_pumpetageswahl_a_haus:Freitag] =~ "on" and [[d_uhrzeit_a_haus]|Fr])or([d_pumpetageswahl_a_haus:Samstag] =~ "on" and [[d_uhrzeit_a_haus]|Sa])or([d_pumpetageswahl_a_haus:Sonntag] =~ "on" and [[d_uhrzeit_a_haus]|So])) and [b_gartenpumpe_a_haus] eq "on" and [b_RegenBedingung_haus] eq "off" and [b_TempBedingung_haus] eq "on" and [b_WindBedingung_haus] eq "on") {fhem("set pushAll message Automatische Bewässerung im Hausgarten wurde nicht aktiviert, da es zu viel regnet!")} elsif((([d_pumpetageswahl_a_haus:Montag] =~ "on" and [[d_uhrzeit_a_haus]|Mo])or([d_pumpetageswahl_a_haus:Dienstag] =~ "on" and [[d_uhrzeit_a_haus]|Di])or([d_pumpetageswahl_a_haus:Mittwoch] =~ "on" and [[d_uhrzeit_a_haus]|Mi])or([d_pumpetageswahl_a_haus:Donnerstag] =~ "on" and [[d_uhrzeit_a_haus]|Do])or([d_pumpetageswahl_a_haus:Freitag] =~ "on" and [[d_uhrzeit_a_haus]|Fr])or([d_pumpetageswahl_a_haus:Samstag] =~ "on" and [[d_uhrzeit_a_haus]|Sa])or([d_pumpetageswahl_a_haus:Sonntag] =~ "on" and [[d_uhrzeit_a_haus]|So])) and [b_gartenpumpe_a_haus] eq "on" and [b_RegenBedingung_haus] eq "on" and [b_TempBedingung_haus] eq "off" and [b_WindBedingung_haus] eq "on") {fhem("set pushAll message Automatische Bewässerung im Hausgarten wurde nicht aktiviert, da die Temperatur zu niedrig ist!")} elsif((([d_pumpetageswahl_a_haus:Montag] =~ "on" and [[d_uhrzeit_a_haus]|Mo])or([d_pumpetageswahl_a_haus:Dienstag] =~ "on" and [[d_uhrzeit_a_haus]|Di])or([d_pumpetageswahl_a_haus:Mittwoch] =~ "on" and [[d_uhrzeit_a_haus]|Mi])or([d_pumpetageswahl_a_haus:Donnerstag] =~ "on" and [[d_uhrzeit_a_haus]|Do])or([d_pumpetageswahl_a_haus:Freitag] =~ "on" and [[d_uhrzeit_a_haus]|Fr])or([d_pumpetageswahl_a_haus:Samstag] =~ "on" and [[d_uhrzeit_a_haus]|Sa])or([d_pumpetageswahl_a_haus:Sonntag] =~ "on" and [[d_uhrzeit_a_haus]|So])) and [b_gartenpumpe_a_haus] eq "on" and [b_RegenBedingung_haus] eq "on" and [b_TempBedingung_haus] eq "on" and [b_WindBedingung_haus] eq "off") {fhem("set pushAll message Automatische Bewässerung im Hausgarten wurde nicht aktiviert, da es zu windig ist!")} elsif((([d_pumpetageswahl_a_haus:Montag] =~ "on" and [[d_uhrzeit_a_haus]|Mo])or([d_pumpetageswahl_a_haus:Dienstag] =~ "on" and [[d_uhrzeit_a_haus]|Di])or([d_pumpetageswahl_a_haus:Mittwoch] =~ "on" and [[d_uhrzeit_a_haus]|Mi])or([d_pumpetageswahl_a_haus:Donnerstag] =~ "on" and [[d_uhrzeit_a_haus]|Do])or([d_pumpetageswahl_a_haus:Freitag] =~ "on" and [[d_uhrzeit_a_haus]|Fr])or([d_pumpetageswahl_a_haus:Samstag] =~ "on" and [[d_uhrzeit_a_haus]|Sa])or([d_pumpetageswahl_a_haus:Sonntag] =~ "on" and [[d_uhrzeit_a_haus]|So])) and [b_gartenpumpe_a_haus] eq "on" and [b_RegenBedingung_haus] eq "off" and [b_TempBedingung_haus] eq "off" and [b_WindBedingung_haus] eq "on") {fhem("set pushAll message Automatische Bewässerung im Hausgarten wurde nicht aktiviert, da es zu viel regnet hat und es zu kalt ist!")} elsif((([d_pumpetageswahl_a_haus:Montag] =~ "on" and [[d_uhrzeit_a_haus]|Mo])or([d_pumpetageswahl_a_haus:Dienstag] =~ "on" and [[d_uhrzeit_a_haus]|Di])or([d_pumpetageswahl_a_haus:Mittwoch] =~ "on" and [[d_uhrzeit_a_haus]|Mi])or([d_pumpetageswahl_a_haus:Donnerstag] =~ "on" and [[d_uhrzeit_a_haus]|Do])or([d_pumpetageswahl_a_haus:Freitag] =~ "on" and [[d_uhrzeit_a_haus]|Fr])or([d_pumpetageswahl_a_haus:Samstag] =~ "on" and [[d_uhrzeit_a_haus]|Sa])or([d_pumpetageswahl_a_haus:Sonntag] =~ "on" and [[d_uhrzeit_a_haus]|So])) and [b_gartenpumpe_a_haus] eq "on" and [b_RegenBedingung_haus] eq "off" and [b_TempBedingung_haus] eq "on" and [b_WindBedingung_haus] eq "off") {fhem("set pushAll message Automatische Bewässerung im Hausgarten wurde nicht aktiviert, da es zu viel regnet und es zu windig ist!")} elsif((([d_pumpetageswahl_a_haus:Montag] =~ "on" and [[d_uhrzeit_a_haus]|Mo])or([d_pumpetageswahl_a_haus:Dienstag] =~ "on" and [[d_uhrzeit_a_haus]|Di])or([d_pumpetageswahl_a_haus:Mittwoch] =~ "on" and [[d_uhrzeit_a_haus]|Mi])or([d_pumpetageswahl_a_haus:Donnerstag] =~ "on" and [[d_uhrzeit_a_haus]|Do])or([d_pumpetageswahl_a_haus:Freitag] =~ "on" and [[d_uhrzeit_a_haus]|Fr])or([d_pumpetageswahl_a_haus:Samstag] =~ "on" and [[d_uhrzeit_a_haus]|Sa])or([d_pumpetageswahl_a_haus:Sonntag] =~ "on" and [[d_uhrzeit_a_haus]|So])) and [b_gartenpumpe_a_haus] eq "on" and [b_RegenBedingung_haus] eq "on" and [b_TempBedingung_haus] eq "off" and [b_WindBedingung_haus] eq "off") {fhem("set pushAll message Automatische Bewässerung im Hausgarten wurde nicht aktiviert, da es zu kalt ist und es zu windig ist!")} elsif((([d_pumpetageswahl_a_haus:Montag] =~ "on" and [[d_uhrzeit_a_haus]|Mo])or([d_pumpetageswahl_a_haus:Dienstag] =~ "on" and [[d_uhrzeit_a_haus]|Di])or([d_pumpetageswahl_a_haus:Mittwoch] =~ "on" and [[d_uhrzeit_a_haus]|Mi])or([d_pumpetageswahl_a_haus:Donnerstag] =~ "on" and [[d_uhrzeit_a_haus]|Do])or([d_pumpetageswahl_a_haus:Freitag] =~ "on" and [[d_uhrzeit_a_haus]|Fr])or([d_pumpetageswahl_a_haus:Samstag] =~ "on" and [[d_uhrzeit_a_haus]|Sa])or([d_pumpetageswahl_a_haus:Sonntag] =~ "on" and [[d_uhrzeit_a_haus]|So])) and [b_gartenpumpe_a_haus] eq "on" and [b_RegenBedingung_haus] eq "off" and [b_TempBedingung_haus] eq "off" and [b_WindBedingung_haus] eq "off") {fhem("set pushAll message Automatische Bewässerung im Hausgarten wurde nicht aktiviert, da es zu viel regnet, zu kalt ist und zu windig ist!")}}> 
-``
+````
  
 
 ## Schrebergarten 
@@ -1374,9 +1374,8 @@ FHEM Befehle:
 Die Folgenden Befehle musst du in der Kommandozeile ausführen. 
 
  
-``
 Teilautomatisierter Betrieb 
-
+````
 <define b_gartenpumpe_t_schreber dummy> 
 
 <attr b_gartenpumpe_t_schreber setList on off>  
@@ -1420,11 +1419,11 @@ Automatisierter Betrieb – Menu
 <attr d_pumpetageswahl_a_schreber readingList Montag Dienstag Mittwoch Donnerstag Freitag Samstag Sonntag>  
 
 < attr d_pumpetageswahl_a_schreber setList Montag:on,off Dienstag:on,off Mittwoch:on,off Donnerstag:on,off Freitag:on,off Samstag:on,off Sonntag:on,off> 
-
+````
  
 
 Automatisierter Betrieb – Regensensor 
-
+````
 <define d_rainperiod1_a_schreber dummy>  
 
 <define d_rainperiod2_a_schreber dummy>  
@@ -1456,11 +1455,11 @@ Automatisierter Betrieb – Regensensor
   
 
 <define n_pumprain_schreber notify d_rainpastperiod1_a_schreber|d_rainpastperiod2_a_schreber| d_diffRain1_a_schreber|d_diffRain2_a_schreber {my $rain1_schreber=ReadingsVal('d_rainpastperiod1_a_schreber','state','0');; my $rain2_schreber=ReadingsVal('d_rainpastperiod2_a_schreber','state','0');;my $avgrain1_schreber=ReadingsVal('d_diffRain1_a_schreber','state','0');; my $avgrain2_schreber=ReadingsVal('d_diffRain2_a_schreber','state','0');; if($avgrain1_schreber < $rain1_schreber and $avgrain2_schreber < $rain2_schreber){fhem("set b_RegenBedingung_schreber on")} else {fhem("set b_RegenBedingung_schreber off")}}> 
-
+````
  
 
 Automatisierter Betrieb – Temperatursensor 
-
+````
 <define d_avgtempperiod_a_schreber dummy>   
 
 <define d_avgTempPast_a_schreber dummy>  
@@ -1484,11 +1483,11 @@ Automatisierter Betrieb – Temperatursensor
 <attr b_TempBedingung_a_schreber setList on off>  
 
 <attr b_TempBedingung_a_schreber useSetExtensions 1> 
-
+````
  
 
 Automatisierter Betrieb - Windsensor 
-
+````
 <define d_windboeengeschwindigkeit_schreber dummy>  
 
 <define d_windgeschwindigkeit_schreber dummy>  
@@ -1504,23 +1503,23 @@ Automatisierter Betrieb - Windsensor
 <attr b_WindBedingung_schreber setList on off>  
 
 <attr b_WindBedingung_schreber useSetExtensions 1> 
-``
+````
  
 
 Automatisierter Betrieb – Aktivierung  
-``
+````
 <define doif_Pumpschreber DOIF { if((([d_pumpetageswahl_a_schreber:Montag] =~ "on" and [[d_uhrzeit_a_schreber]|Mo])or([d_pumpetageswahl_a_schreber:Dienstag] =~ "on" and [[d_uhrzeit_a_schreber]|Di])or([d_pumpetageswahl_a_schreber:Mittwoch] =~ "on" and [[d_uhrzeit_a_schreber]|Mi])or([d_pumpetageswahl_a_schreber:Donnerstag] =~ "on" and [[d_uhrzeit_a_schreber]|Do])or([d_pumpetageswahl_a_schreber:Freitag] =~ "on" and [[d_uhrzeit_a_schreber]|Fr])or([d_pumpetageswahl_a_schreber:Samstag] =~ "on" and [[d_uhrzeit_a_schreber]|Sa])or([d_pumpetageswahl_a_schreber:Sonntag] =~ "on" and [[d_uhrzeit_a_schreber]|So])) and [b_gartenpumpe_a_schreber] eq "on" and [b_RegenBedingung_schreber] eq "on" and [b_TempBedingung_schreber] eq "on" and [b_WindBedingung_schreber] eq "on") {my $timer=ReadingsVal('d_uhrzeittimer_a_schreber','state','0')*60 ;;;; fhem("set  b_gartenpumpe_t_schreber on-for-timer ".$timer."")}}> 
 
  
 
 <{if((([d_pumpetageswahl_a_schreber:Montag] =~ "on" and [[d_uhrzeit_a_schreber]|Mo])or([d_pumpetageswahl_a_schreber:Dienstag] =~ "on" and [[d_uhrzeit_a_schreber]|Di])or([d_pumpetageswahl_a_schreber:Mittwoch] =~ "on" and [[d_uhrzeit_a_schreber]|Mi])or([d_pumpetageswahl_a_schreber:Donnerstag] =~ "on" and [[d_uhrzeit_a_schreber]|Do])or([d_pumpetageswahl_a_schreber:Freitag] =~ "on" and [[d_uhrzeit_a_schreber]|Fr])or([d_pumpetageswahl_a_schreber:Samstag] =~ "on" and [[d_uhrzeit_a_schreber]|Sa])or([d_pumpetageswahl_a_schreber:Sonntag] =~ "on" and [[d_uhrzeit_a_schreber]|So])) and [b_gartenpumpe_a_schreber] eq "on" and [b_RegenBedingung_schreber] eq "off" and [b_TempBedingung_schreber] eq "on" and [b_WindBedingung_schreber] eq "on") {fhem("set pushAll message Automatische Bewässerung im Schrebergarten wurde nicht aktiviert, da es zu viel regnet!")} elsif((([d_pumpetageswahl_a_schreber:Montag] =~ "on" and [[d_uhrzeit_a_schreber]|Mo])or([d_pumpetageswahl_a_schreber:Dienstag] =~ "on" and [[d_uhrzeit_a_schreber]|Di])or([d_pumpetageswahl_a_schreber:Mittwoch] =~ "on" and [[d_uhrzeit_a_schreber]|Mi])or([d_pumpetageswahl_a_schreber:Donnerstag] =~ "on" and [[d_uhrzeit_a_schreber]|Do])or([d_pumpetageswahl_a_schreber:Freitag] =~ "on" and [[d_uhrzeit_a_schreber]|Fr])or([d_pumpetageswahl_a_schreber:Samstag] =~ "on" and [[d_uhrzeit_a_schreber]|Sa])or([d_pumpetageswahl_a_schreber:Sonntag] =~ "on" and [[d_uhrzeit_a_schreber]|So])) and [b_gartenpumpe_a_schreber] eq "on" and [b_RegenBedingung_schreber] eq "on" and [b_TempBedingung_schreber] eq "off" and [b_WindBedingung_schreber] eq "on") {fhem("set pushAll message Automatische Bewässerung im Schrebergarten wurde nicht aktiviert, da die Temperatur zu niedrig ist!")} elsif((([d_pumpetageswahl_a_schreber:Montag] =~ "on" and [[d_uhrzeit_a_schreber]|Mo])or([d_pumpetageswahl_a_schreber:Dienstag] =~ "on" and [[d_uhrzeit_a_schreber]|Di])or([d_pumpetageswahl_a_schreber:Mittwoch] =~ "on" and [[d_uhrzeit_a_schreber]|Mi])or([d_pumpetageswahl_a_schreber:Donnerstag] =~ "on" and [[d_uhrzeit_a_schreber]|Do])or([d_pumpetageswahl_a_schreber:Freitag] =~ "on" and [[d_uhrzeit_a_schreber]|Fr])or([d_pumpetageswahl_a_schreber:Samstag] =~ "on" and [[d_uhrzeit_a_schreber]|Sa])or([d_pumpetageswahl_a_schreber:Sonntag] =~ "on" and [[d_uhrzeit_a_schreber]|So])) and [b_gartenpumpe_a_schreber] eq "on" and [b_RegenBedingung_schreber] eq "on" and [b_TempBedingung_schreber] eq "on" and [b_WindBedingung_schreber] eq "off") {fhem("set pushAll message Automatische Bewässerung im Schrebergarten wurde nicht aktiviert, da es zu windig ist!")} elsif((([d_pumpetageswahl_a_schreber:Montag] =~ "on" and [[d_uhrzeit_a_schreber]|Mo])or([d_pumpetageswahl_a_schreber:Dienstag] =~ "on" and [[d_uhrzeit_a_schreber]|Di])or([d_pumpetageswahl_a_schreber:Mittwoch] =~ "on" and [[d_uhrzeit_a_schreber]|Mi])or([d_pumpetageswahl_a_schreber:Donnerstag] =~ "on" and [[d_uhrzeit_a_schreber]|Do])or([d_pumpetageswahl_a_schreber:Freitag] =~ "on" and [[d_uhrzeit_a_schreber]|Fr])or([d_pumpetageswahl_a_schreber:Samstag] =~ "on" and [[d_uhrzeit_a_schreber]|Sa])or([d_pumpetageswahl_a_schreber:Sonntag] =~ "on" and [[d_uhrzeit_a_schreber]|So])) and [b_gartenpumpe_a_schreber] eq "on" and [b_RegenBedingung_schreber] eq "off" and [b_TempBedingung_schreber] eq "off" and [b_WindBedingung_schreber] eq "on") {fhem("set pushAll message Automatische Bewässerung im Schrebergarten wurde nicht aktiviert, da es zu viel regnet hat und es zu kalt ist!")} elsif((([d_pumpetageswahl_a_schreber:Montag] =~ "on" and [[d_uhrzeit_a_schreber]|Mo])or([d_pumpetageswahl_a_schreber:Dienstag] =~ "on" and [[d_uhrzeit_a_schreber]|Di])or([d_pumpetageswahl_a_schreber:Mittwoch] =~ "on" and [[d_uhrzeit_a_schreber]|Mi])or([d_pumpetageswahl_a_schreber:Donnerstag] =~ "on" and [[d_uhrzeit_a_schreber]|Do])or([d_pumpetageswahl_a_schreber:Freitag] =~ "on" and [[d_uhrzeit_a_schreber]|Fr])or([d_pumpetageswahl_a_schreber:Samstag] =~ "on" and [[d_uhrzeit_a_schreber]|Sa])or([d_pumpetageswahl_a_schreber:Sonntag] =~ "on" and [[d_uhrzeit_a_schreber]|So])) and [b_gartenpumpe_a_schreber] eq "on" and [b_RegenBedingung_schreber] eq "off" and [b_TempBedingung_schreber] eq "on" and [b_WindBedingung_schreber] eq "off") {fhem("set pushAll message Automatische Bewässerung im Schrebergarten wurde nicht aktiviert, da es zu viel regnet und es zu windig ist!")} elsif((([d_pumpetageswahl_a_schreber:Montag] =~ "on" and [[d_uhrzeit_a_schreber]|Mo])or([d_pumpetageswahl_a_schreber:Dienstag] =~ "on" and [[d_uhrzeit_a_schreber]|Di])or([d_pumpetageswahl_a_schreber:Mittwoch] =~ "on" and [[d_uhrzeit_a_schreber]|Mi])or([d_pumpetageswahl_a_schreber:Donnerstag] =~ "on" and [[d_uhrzeit_a_schreber]|Do])or([d_pumpetageswahl_a_schreber:Freitag] =~ "on" and [[d_uhrzeit_a_schreber]|Fr])or([d_pumpetageswahl_a_schreber:Samstag] =~ "on" and [[d_uhrzeit_a_schreber]|Sa])or([d_pumpetageswahl_a_schreber:Sonntag] =~ "on" and [[d_uhrzeit_a_schreber]|So])) and [b_gartenpumpe_a_schreber] eq "on" and [b_RegenBedingung_schreber] eq "on" and [b_TempBedingung_schreber] eq "off" and [b_WindBedingung_schreber] eq "off") {fhem("set pushAll message Automatische Bewässerung im Schrebergarten wurde nicht aktiviert, da es zu kalt ist und es zu windig ist!")} elsif((([d_pumpetageswahl_a_schreber:Montag] =~ "on" and [[d_uhrzeit_a_schreber]|Mo])or([d_pumpetageswahl_a_schreber:Dienstag] =~ "on" and [[d_uhrzeit_a_schreber]|Di])or([d_pumpetageswahl_a_schreber:Mittwoch] =~ "on" and [[d_uhrzeit_a_schreber]|Mi])or([d_pumpetageswahl_a_schreber:Donnerstag] =~ "on" and [[d_uhrzeit_a_schreber]|Do])or([d_pumpetageswahl_a_schreber:Freitag] =~ "on" and [[d_uhrzeit_a_schreber]|Fr])or([d_pumpetageswahl_a_schreber:Samstag] =~ "on" and [[d_uhrzeit_a_schreber]|Sa])or([d_pumpetageswahl_a_schreber:Sonntag] =~ "on" and [[d_uhrzeit_a_schreber]|So])) and [b_gartenpumpe_a_schreber] eq "on" and [b_RegenBedingung_schreber] eq "off" and [b_TempBedingung_schreber] eq "off" and [b_WindBedingung_schreber] eq "off") {fhem("set pushAll message Automatische Bewässerung im Schrebergarten wurde nicht aktiviert, da es zu viel regnet, zu kalt ist und zu windig ist!")}}> 
-``
+````
  
 
 HTML Code Einfügen  
 
 Folgenden HMTL Code in /opt/fhem/www/tablet/Schrebergartenpumpe.html einfügen: 
-``html
+````html
 <!DOCTYPE html> 
 
 <html> 
@@ -3036,7 +3035,7 @@ Folgenden HMTL Code in /opt/fhem/www/tablet/Schrebergartenpumpe.html einfügen:
 </body> 
 
 </html> 
-``
+````
  
 
  
@@ -3064,7 +3063,7 @@ Vorsicht: Die Kalibrierung nur durchführen, wenn die Zisterne zu 100% gefüllt 
 Zuallererst muss du einen Dummy für die Zisterne anlegen. In diesem werden die Werte für die Zisterne gespeichert: 
 
  
-''
+''``
 <define zisterne dummy> 
 
 <attr zisterne room Zisterne> 
@@ -3072,7 +3071,7 @@ Zuallererst muss du einen Dummy für die Zisterne anlegen. In diesem werden die 
 <attr zisterne readingList BOffset fuellstand hoehe literangabe literberechnet fuellstandprozent> 
 
 <attr zisterne setList BOffset fuellstand hoehe literangabe literberechnet fuellstandprozent> 
-''
+''``
  
 
 Die Höhe und die Litermenge kannst du nun über die FTUI bei Bedarf ändern.  
@@ -3084,7 +3083,7 @@ Die Höhe und die Litermenge kannst du nun über die FTUI bei Bedarf ändern.
 Setzte folgenden Befehl über die Kommandozeile ab, um die automatische Kalibrierung zu implementieren:  
 
  
-``
+````
 <define doif_zisterneCalibration DOIF ([$SELF:P_mybutton] eq "on")(set zisterne BOffset [UC1:Abstand];;set doif_zisterneCalibration P_mybutton off)> 
 
 <attr doif_zisterneCalibration do always> 
@@ -3096,7 +3095,7 @@ Setzte folgenden Befehl über die Kommandozeile ab, um die automatische Kalibrie
 <attr doif_zisterneCalibration selftrigger all> 
 
 <attr doif_zisterneCalibration setList P_mybutton:uzsuSelectRadio,on,off> 
-``
+````
  
 
 Nun kannst du mit einem Klick ein deinen Einstellungen den Abstand kalibrieren. 
@@ -3108,13 +3107,13 @@ Nun kannst du mit einem Klick ein deinen Einstellungen den Abstand kalibrieren.
 Nun möchtest du den Füllstand deiner Zisterne berechnen. Dafür musst du die folgenden Befehle absetzten:  
 
  
-``
+````
 <define efmod doif_zisterneBerechnung DOIF ([UC1:Abstand])(set zisterne fuellstand {(1-((([zisterne:hoehe]/2)*([zisterne:hoehe]/2)*acos(1-(([UC1:Abstand]-[zisterne:BOffset])/([zisterne:hoehe]/2)))-sqrt(2*([UC1:Abstand]-[zisterne:BOffset])*([zisterne:hoehe]/2)-(([UC1:Abstand]-[zisterne:BOffset])*([UC1:Abstand]-[zisterne:BOffset])))*(([UC1:Abstand]-[zisterne:BOffset])-([zisterne:hoehe]/2)))/(3.14*(([zisterne:hoehe]/2)*([zisterne:hoehe]/2)))))} )> 
 
 <attr doif_zisterneBerechnung do always> 
 
 <attr doif_zisterneBerechnung room Zisterne> 
-``
+````
  
 
 Durch das angelegte DOIF wird dein Füllstand immer aktuell berechnet und als Dezimalzahl gespeichert. Als nächstes zeigen wir dir, wie du deinen Füllstand in Liter angibst und visualisierst. 
@@ -3124,9 +3123,9 @@ Durch das angelegte DOIF wird dein Füllstand immer aktuell berechnet und als De
 Um den Füllstand auf der FTUI anzuzeigen, legst du einen Notify an, welcher die Liter in der Zisterne berchnet:  
 
  
-``
+````
 <define n_zistereneLiterBerechnung notify zisterne:fuellstand.* {my $literangabe=ReadingsVal('zisterne','literangabe','0');;;; my $fuellstand=ReadingsVal('zisterne','fuellstand','0');;;; my $rechnung=$literangabe*$fuellstand;;;; fhem("set zisterne literberechnet ".$rechnung."")}> 
-``
+````
  
 
 Der berechnete Literstand wird im Reading literberechnet gespeichert. 
@@ -3136,10 +3135,10 @@ Der berechnete Literstand wird im Reading literberechnet gespeichert.
 Um den Füllstand in der FTUI zu visualisieren, muss der Füllstand in einer ganzen Zahl angegeben werden. Dafür muss folgendes Notify angelegt werden: 
 
  
-``
+````
 <define n_zistereneFuellstandProzent notify zisterne:fuellstand.* { my $fuellstand=ReadingsVal('zisterne','fuellstand','0');;;; my $rechnung=int(100*$fuellstand);;;; fhem("set zisterne fuellstandprozent ".$rechnung."")}> 
 
- ``
+ ````
 
 Der Wert wird im Reading fuelllstandprozent gespeichert. 
 
@@ -3148,7 +3147,7 @@ Der Wert wird im Reading fuelllstandprozent gespeichert.
 ### Schritt 3 – In die FTUI einfügen 
 
 Du musst die folgenden Codezeilen unter den Kommentar <!--  Zisterne --> einfügen: 
-``html
+````html
 <li data-row="2" data-col="2" data-sizex="1" data-sizey="2" class="left-align">  
 
 <header>Zisternenf&uuml;llstand</header> 
@@ -3202,15 +3201,15 @@ Du musst die folgenden Codezeilen unter den Kommentar <!--  Zisterne --> einfüg
   </div> 
 
 </li> 
-``
+````
  
 
 Solltest du dich dafür entscheiden den Füllstand nur auf einem der Reiter anzeigen zu lassen, so musst du die HTML anpassen. Hierfür gehst du auf die jeweilige HTML Datei der Seite, welche den Füllstand nicht anzeigen soll. Den HTML Code der Zisterne fügst du nicht ein und änderst data-sizex von 3 auf 4. 
 
  
-``
+````
 <li data-row="2" data-col="2" data-sizex="4" data-sizey="2" class="left-align"> 
-``
+````
   
 
  
