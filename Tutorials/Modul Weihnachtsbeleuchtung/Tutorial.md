@@ -1841,7 +1841,9 @@ data-background-icon="fa-square">
 
 data-device="lichterketteAAnwesenheit" 
 
-data-get="P_mybegin"	 
+data-get="timer_01_c01" 
+
+data-substitution="toString().substr(11,5)" 
 
 data-hide="P_mybutton" 	                                
 
@@ -1857,7 +1859,9 @@ data-color="green">
 
 data-device="lichterketteAAnwesenheit" 
 
-data-get="P_myend"	 
+data-get="timer_02_c01" 
+
+data-substitution="toString().substr(11,5)"
 
 data-hide="P_mybutton" 	                                
 
