@@ -6,7 +6,7 @@ In diesem Tutorial wirst du lernen, wie du das Ocean Blue Houseautomation-System
 So erhältst du unsere Abschlusslösung, ohne die Gefahr, dass in einzelnen Tutorials etwas schief läuft!
 
 ## Voraussetzungen
-- Benötigte Hardware griffbereit! :-)
+* Benötigte Hardware griffbereit
 
 ### Schritt 1 - Beiliegendes Image-File auf die MicroSD-Karte schreiben
 
