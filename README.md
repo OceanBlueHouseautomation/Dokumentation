@@ -1,4 +1,4 @@
-# Wilkommen, zu deiner eignen Hausautomation
+# Wilkommen, zu deiner eigenen Hausautomation
 Vielen Dank, dass du dich für Ocean Blue Hausautomation entschieden hast. In diesem Online-Verzeichnis findest du alles um dein eigenes Hausautomationssystem zu erstellen. Die Anleitung ist dabei in verschiedene Tutorials aufgegliedert, die als einfach zu folgende Schritt für Schritt Anleitung entworfen wurden. Wenn es etwas schneller gehen soll kannst du auch den Quickguide nutzen. Nachfolgend erhältst Du ein paar Tipps, die das Benutzen der Tutorials erleichtern.
 Viel Spaß beim nachbauen wünscht dir das Ocean Blue Hausautomation Team!
 
