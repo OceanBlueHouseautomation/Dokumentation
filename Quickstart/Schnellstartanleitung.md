@@ -7,16 +7,21 @@ So erhältst du unsere Abschlusslösung, ohne die Gefahr, dass in einzelnen Tuto
 
 ## Voraussetzungen
 * Benötigte Hardware griffbereit
+* Image heruntergeladen, siehe Schritt 1
 
 ### Schritt 1 - Beiliegendes Image-File auf die MicroSD-Karte schreiben
 
 Du hast von uns ein Image-File erhalten, welches bereits die komplette Konfiguration des Raspberry Pis inklusive FHEM-Installation und aller gelieferten Module enthält.
 Dieses kannst du einfach mit BalenaEtcher oder einer vergleichbaren Software auf die Karte schreiben.
+Das Image findest du hier: LINK FOLGT
+BalenaEtcher findest du hier: https://www.balena.io/etcher/
+
 
 ### Schritt 2 - Anschließen der Hardware
 
 Zum Anschließen der Hardware empfehlen wir dir die Lektüre des folgenden Tutorials:
 https://github.com/OceanBlueHouseautomation/Dokumentation/blob/main/Tutorials/Modul%20Hardware/Tutorial%20Hardware.md
+
 
 ### Schritt 3 - Starten deiner Installation
 
@@ -24,6 +29,10 @@ Deine Installation ist mit einem Passwort gesichert. Du erhältst Zugriff über 
 alle relevanten Daten wie zum Beispiel deine Postleitzahl hinterlegen.
 
 
+### Schritt 4 - "Feintuning"
+
+Manche Module benötigen nun noch etwas Feintuning von dir: Z.B. musst du bei der Verkehrsroutenüberwachung und beim Dienst PushNotifier einen eigenen API-Key hinterlegen. Wie du diese generierst und richtig integrierst, lernst du in den detaillierten Tutorials.
+Außerdem solltest du über FTUI deine Einstellungen anpassen. So kommst du mit unserem Grundgerüst Schritt für Schritt zu deinem eigenen FHEM-System!
 
 
 ## Abschluss
