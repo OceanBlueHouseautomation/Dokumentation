@@ -100,7 +100,6 @@ Aufruf der Datei fstab mit Nano:
 Die Ausgabe des ersten Befehls ergab die zu setzenden Parameter:
 UUID=74EA618724897ACE   /media/usb   ntfs   auto,nofail,sync,users,rw   0   0
  
-Bug: Tut noch nicht. Warum?
  
 siehe USB-Stick und USB-Festplatten mit "fstab" automatisch mounten/einhängen (Raspberry Pi) (elektronik-kompendium.de)
 https://www.elektronik-kompendium.de/sites/raspberry-pi/2012181.htm
