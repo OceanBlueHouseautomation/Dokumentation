@@ -6,7 +6,7 @@ In diesem Tutorial erfährst du anhand eines konkreten Beispiels einer Sturmwarn
 
 ## Voraussetzungen
 - Funktionierende FHEM-Installation
-- Smartphone mit Android oder iOS :-)
+- Smartphone mit Android oder iOS
 
 ### Schritt 1 - Erstellen eines PushNotifier-Kontos und Anlegen der Geräte
 
